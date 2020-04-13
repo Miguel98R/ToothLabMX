@@ -1,0 +1,162 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.login {
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    background: rgba(255, 255, 255, 1.0);
+    background: -webkit-linear-gradient(top right, rgba(255, 255, 255, 1.0), rgba(8, 70, 176, 1.0));
+    background: -moz-linear-gradient(top right, rgba(255, 255, 255, 1.0), rgba(8, 70, 176, 1.0));
+    background: linear-gradient(to bottom left, rgba(255, 255, 255, 1.0), rgba(8, 70, 176, 1.0));
+}
+
+input[type="text"] {
+    color: white;
+}
+
+input[type="password"] {
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
+input#paciente[type="text"] {
+    color: #000;
+}
+
+input#paciente::placeholder {
+    color: #000;
+}
+
+input#dentista[type="text"] {
+    color: #000;
+}
+
+input#dentista::placeholder {
+    color: #000;
+}
+
+input#producto[type="text"] {
+    color: #000;
+}
+
+input#producto::placeholder {
+    color: #000;
+}
+
+input#buscador[type="text"] {
+    color: #000;
+}
+
+input#buscador::placeholder {
+    color: #000;
+}
+
+.inputDato {
+    background-color: transparent;
+    border: 2px solid rgb(115, 215, 255);
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.button2 {
+    background: rgba(88, 235, 151, 1.0);
+    background: -webkit-linear-gradient(top left, rgba(88, 235, 151, 1.0), rgba(97, 230, 255, 1.0));
+    background: -moz-linear-gradient(top left, rgba(88, 235, 151, 1.0), rgba(97, 230, 255, 1.0));
+    background: linear-gradient(to bottom right, rgba(88, 235, 151, 1.0), rgba(97, 230, 255, 1.0));
+    border-radius: 20px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button3 {
+    background: #72DDF8;
+    background: -webkit-linear-gradient(top left, #72DDF8, #94B5DC);
+    background: -moz-linear-gradient(top left, #72DDF8, #94B5DC);
+    background: linear-gradient(to bottom right, #72DDF8, #94B5DC);
+    border-radius: 20px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.cabeza {
+    background: #72DDF8;
+    background: -webkit-linear-gradient(top left, #72DDF8, #94B5DC);
+    background: -moz-linear-gradient(top left, #72DDF8, #94B5DC);
+    background: linear-gradient(to bottom right, #72DDF8, #94B5DC);
+    height: 50%;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]+label {
+    cursor: pointer;
+}
+
+label:before {
+    content: "";
+    background: transparent;
+    border: 1px solid blue;
+    border-radius: 20px;
+    display: inline-block;
+    height: 15px;
+    margin-right: 1px;
+    vertical-align: middle;
+    width: 15px;
+}
+
+input[type=checkbox]:checked+label:before {
+    content: '';
+    font-size: 20px;
+    background-color: rgb(115, 215, 255);
+    font-family: "Times New Roman";
+    font-weight: bolder;
+}
+
+footer {
+    background: rgba(255, 255, 255, 1.0);
+    padding: 1px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer .contenedor {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer p {
+    color: #000;
+    margin-top: 40px;
+}

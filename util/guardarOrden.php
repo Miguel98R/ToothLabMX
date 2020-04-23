@@ -3,12 +3,13 @@ include("conexion.php");
 
 $dentista = $_POST['dentista'];
 $producto = $_POST['producto'];
+$unidades = $_POST['unidades'];
 $paciente = $_POST['paciente'];
 $entrada = $_POST['entrada'];
 $salida = $_POST['salida'];
 $comentario = $_POST['comentario'];
 
-
+$producto=$producto." "."X"." ".$unidades."Pz.";
 
 
 $insertarCabeza = "INSERT INTO cabeza_orden (dentista,paciente,producto,fecha1,fecha2,comentario) VALUES ('$dentista','$paciente','$producto','$entrada','$salida','$comentario');";
@@ -43,7 +44,6 @@ if($_POST['color'] != "")
             }
    		 }
 }
-
 
 
 if($_POST['nomenclatura'] != "")

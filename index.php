@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/b46c20e3c5.js" crossorigin="anonymous"></script>
+    
     <title>Seven</title>
 </head>
 

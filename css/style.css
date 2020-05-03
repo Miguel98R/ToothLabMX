@@ -9,50 +9,7 @@ body {
 }
 
 
-/* Style the tab */
 
-.tab {
-    overflow: hidden;
-    background-color: #f1f1f1;
-}
-
-
-/* Style the buttons inside the tab */
-
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-
-/* Change background color of buttons on hover */
-
-.tab button:hover {
-    background-color: #ddd;
-}
-
-
-/* Create an active/current tablink class */
-
-.tab button.active {
-    background-color: #ccc;
-}
-
-
-/* Style the tab content */
-
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
 
 .logo {
     width: 150px;
@@ -69,51 +26,28 @@ body {
     background: linear-gradient(to bottom left, rgba(255, 255, 255, 1.0), rgba(8, 70, 176, 1.0));
 }
 
-input[type="text"] {
+input#user[type="text"] {
     color: white;
 }
 
-input[type="password"] {
+input#user::placeholder {
     color: white;
 }
 
-::placeholder {
+input#psw[type="password"] {
     color: white;
 }
 
-input#paciente[type="text"] {
-    color: #000;
+input#psw::placeholder {
+    color: white;
 }
 
-input#paciente::placeholder {
-    color: #000;
-}
 
-input#dentista[type="text"] {
-    color: #000;
-}
-
-input#dentista::placeholder {
-    color: #000;
-}
-
-input#producto[type="text"] {
-    color: #000;
-}
-
-input#producto::placeholder {
-    color: #000;
-}
-
-input#buscador[type="text"] {
-    color: #000;
-}
-
-input#buscador::placeholder {
-    color: #000;
-}
 
 .inputDato {
+    outline: none;
+
+     border: 0;
     background-color: transparent;
     border: 2px solid rgb(115, 215, 255);
     border-top: 0px;
@@ -160,33 +94,7 @@ input#buscador::placeholder {
     background: linear-gradient(to bottom right, #72DDF8, #94B5DC);
 }
 
-input[type=checkbox] {
-    display: none;
-}
 
-input[type=checkbox]+label {
-    cursor: pointer;
-}
-
-label:before {
-    content: "";
-    background: transparent;
-    border: 1px solid blue;
-    border-radius: 20px;
-    display: inline-block;
-    height: 15px;
-    margin-right: 1px;
-    vertical-align: middle;
-    width: 15px;
-}
-
-input[type=checkbox]:checked+label:before {
-    content: '';
-    font-size: 20px;
-    background-color: rgb(115, 215, 255);
-    font-family: "Times New Roman";
-    font-weight: bolder;
-}
 
 footer {
     background: rgba(255, 255, 255, 1.0);

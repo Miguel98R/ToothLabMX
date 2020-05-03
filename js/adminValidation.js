@@ -1,4 +1,4 @@
-function validar() {
+function dentistas() {
     let dentista, paciente, producto, fecha1, fecha2, comentario;
 
 

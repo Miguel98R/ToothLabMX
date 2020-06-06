@@ -1,118 +1,164 @@
+<?php 
 
-<div style=" border: solid <?php echo $ticketColor;?>;border-radius:20px;heigth:auto; box-shadow: 6px 6px 6px 6px black;">
+    $consultaProductos ="SELECT T1.cantidad,T2.producto,T1.color,T1.od FROM orden_productos_description T1 INNER JOIN productos T2 ON T1.id_producto = T2.id WHERE id_orden=$folio ;";
+    $resultProducto=mysqli_query($conn,$consultaProductos);
 
-    <div class="row mx-0 my-0 py-1 px-0 " style="border-bottom: 0px solid  <?php echo $ticketColor;?> ;">
-        <div class="w-50 ">
-            
-            <h6 class="font-weight-bolder  " style="color:<?php echo $ticketColor;?>;">Status:
-                
-            </h6>
-            <p class="m-0 p-0 font-weight-bolder" ><?php echo $status;?></p>
+    $color="SELECT color from dentistas WHERE nombre='$dentista';";
+    $result = $conn->query($color) or die (mysqli_error($conn));
+    $datos=$result->fetch_assoc();
 
-        </div>
-        <div class="w-50 ">
-           <h6 class="font-weight-bolder  " style="color:<?php echo $ticketColor;?>;">Folio:
-               
-            </h6>
-            <p class="m-0 p-0 font-weight-bolder"> <?php echo $folio;?></p>
-        </div>
+    $ticketColor=$datos['color'];
 
+?>
+
+<div  style="font-size: 14px; border: 7px solid  <?php echo $ticketColor;?>; border-radius:20px;">
+<table class="table text-left table-bordered table-hover table-sm ">
+  <tbody>
+  <div style="background:<?php echo $ticketColor;?>;">
+  <h5 class="text-center py-2 font-weight-bolder text-white">Orden</h5>
     </div>
-    <div class="row mx-0 my-0 py-1 px-0 " style="border-bottom: 0px solid  <?php echo $ticketColor;?> ;">
-        <div class="w-50 ">
-            <h6 class="font-weight-bolder  " style="color:<?php echo $ticketColor;?>;">Entrada:
-              
-            </h6><p class="m-0 p-0 font-weight-bolder"> <?php echo $fecha1;?></p>
-        </div>
-        <div class="w-50 ">
-           <h6 class="font-weight-bolder" style="color:<?php echo $ticketColor;?>;">Salida:
-                
-         </h6> <p class="m-0 p-0 font-weight-bolder"> <?php echo $fecha2;?></p>
-        </div>
-
-    </div>
-<div class="row mx-0 my-0 py-1 px-0 " style="border-bottom: 0px solid  <?php echo $ticketColor;?> ;">
-        <div class="w-50 ">
-           <h6 class="font-weight-bolder  " style="color:<?php echo $ticketColor;?>;">Dentista:
-               
-            </h6>
-            <p class="m-0 p-0 font-weight-bolder"><?php echo $dentista;?></p> 
-        </div>
-        <div class="w-50 ">
-           <h6 class="font-weight-bolder  " style="color:<?php echo $ticketColor;?>;">Paciente:
-               
-            </h6>
- <p class="m-0 p-1 font-weight-bolder"> <?php echo $paciente;?></p> 
-            
-        </div>
-
-    </div>
-    <div class="w-100">
-       <h6 class="font-weight-bolder  " style="color:<?php echo $ticketColor;?>;">Producto:
-           
-        </h6>
-        <p class="m-0 p-1 font-weight-bolder"> <?php echo $producto ." "."X". $cantidad ." "."pz" ;?></p> 
-        <?php 
-           $consultarNuevos = "SELECT producto,cantidad FROM nuevos_productos WHERE id_cabeza='$folio';";
-           $resultNuevos = $conn->query($consultarNuevos) or die (mysqli_error($conn));
-           if($resultNuevos==true){
-            while($datosNuevos=$resultNuevos->fetch_assoc()){
-            
-            ?>
-            
-            <p class="m-0 p-1 font-weight-bolder"> <?php echo $datosNuevos['producto'] ." "."X". $datosNuevos['cantidad'] ." "."pz" ;?></p> 
-
-           <?php } ?>
-           <?php } ?>
-    </div>
-    <div class="w-100">
-
-       <h6 class="font-weight-bolder  " style="color:<?php echo $ticketColor;?>;">Color:
-           
-
-        </h6> <p class="m-0 p-1 font-weight-bolder">  <?php 
+    <tr>
+      <th ><p><label style="color:<?php echo $ticketColor;?>;">Entrada:</label> &nbsp;<?php echo date_format($fecha1,"d/m/Y");?></p></th>
+      <form action="dashboard.php" method="post"  >
+                   <th ><p><label style="color:<?php echo $ticketColor;?>;">Folio:</label>
+                        <input type="number" class="inputDato text-center" name="buscador" id="buscador"
+                         value="<?php echo $folio;?>" min="0"  placeholder="Ingresa un folio ">
                     
-                    $consulta ="SELECT color FROM color_orden WHERE id_cabeza='$folio' ;";
-                    $result=mysqli_query($conn,$consulta);
-                    while($datos=$result->fetch_assoc()){
-                    echo  " " . "/". " " . $datos['color'] ;
-                    }
-                    
-                    ?></p> 
-    </div>
-    <div class="w-100">
+                         <button type=" submit" class="button3 m-1 p-1  "><i class="fas fa-search"></i></button>
+                    </p></th>
 
-       <h6 class="font-weight-bolder  " style="color:<?php echo $ticketColor;?>;">Nomenclatura:
-           
+                </form>
+    </tr>
+    <tr>
+      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Salida:</label> &nbsp;<?php echo date_format($fecha2,"d/m/Y");?></p></th>
+      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Dr:</label>  &nbsp;<?php echo mb_strtoupper($dentista);?></p></th>
+    </tr>
+     <tr>
+      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Status:</label> &nbsp;<?php echo $status;?></p></th>
+      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Paciente:</label>  &nbsp;<?php echo  mb_strtoupper($paciente);?></p></th>
+    </tr>
+       <tr>
+      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Regreso:</label></p></th>
+      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Entrega:</label></p></th>
+    </tr>
+   
+  </tbody>
+</table>
+<div class="py-2 text-center">
 
-        </h6>
-         <p class="m-0 p-1 font-weight-bolder">  <?php 
-                    
-                    $consulta ="SELECT nomenclatura FROM nomenclatura_orden WHERE id_cabeza='$folio' ;";
-                    $result=mysqli_query($conn,$consulta);
-                    while($datos=$result->fetch_assoc()){
-                    echo " " . "/". " " . $datos['nomenclatura'] ;
-                    }
-                    
-                    ?></p> 
-    </div>
-    <div class="w-100">
-
-        <h6 class="font-weight-bolder text-left " style="color:<?php echo $ticketColor;?>;">Comentarios:
-           
-
-        </h6>  <p class="m-0 p-1 font-weight-bolder">   <?php 
-                    
-               
-                    echo $comentario ;
-                    
-                    
-                    ?></p> 
-    </div>
+<table class="table table-hover table-sm">
+  <thead>
+    <tr>
+     
+      <th scope="col">PZS</th>
+      <th scope="col">PRODUCTOS</th>
+      <th scope="col">COLOR</th>
+      <th scope="col">OD</th>
     
- <div class=" text-center  col-md-12 ">
-     <a class="button3 m-1 p-1" target="_blank"  href="util/impresionTicket.php?buscador=<?php echo $folio;?>">Imprimir</a>
-            
-            </div>
+    </tr>
+  </thead>
+  <tbody>
+    <?php 
+    while($datos=$resultProducto->fetch_assoc()){
+
+   ?>
+    <tr>
+   
+      <td><?php echo $datos['cantidad'];?></td>
+      <td><?php echo $datos['producto'];?></td>
+      <td><?php echo $datos['color'];?></td>
+       <td><?php echo $datos['od'];?></td>
+
+    </tr>
+    <?php } ?>
+  </tbody>
+</table>
 
 </div>
+  <hr>
+<div class=" text-center py-2 font-weight-bold">
+    <p><label  style="color:<?php echo $ticketColor;?>;">Comentarios:</label>  &nbsp;<?php echo mb_strtoupper($comentario);?></p>
+</div>
+
+<div class="row">
+  <div class="col py-2 text-center font-weight-bold">
+    <a class="btn btn-primary" target="_blank"  href="util/impresionTicket.php?buscador=<?php echo $folio;?>">Imprimir</a>
+</div>
+ <div class="col py-2 text-center font-weight-bold">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+ Agregar producto
+</button>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="util/agregarProducto.php?id=<?php echo $folio?>" method="POST" >
+           <?php include "components/formNuevaDescripcion.php";?> 
+
+           <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="col py-2 text-center font-weight-bold">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+ Editar
+</button>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-xl" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+ <form action="util/actualizarOrden.php?id=<?php echo $folio?>" class="py-2" method="post" autocomplete="off" >
+          <?php include "components/edicionBotones.php";?> 
+
+       
+        </form>
+           
+
+         
+       
+          
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+  
+</div>
+
+
+
+  
+
+
+
+</div>
+
+
+

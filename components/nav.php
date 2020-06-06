@@ -1,8 +1,5 @@
-<nav class="navbar  navbar-expand-lg navbar-light bg-white">
-    <a class="navbar-brand" href="#">
-        <img src="./img/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-        Seven
-    </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -11,10 +8,10 @@
         <div class="navbar-nav ml-auto">
 
 <li class="nav-item">
-                <a class="nav-link" href="#">Bienvenid@: <?php echo $_SESSION['userName'];?></a>
+                <a class="text-white  nav-link" href="#"><i class="fas fa-house-user"></i> &nbsp; Bienvenid@: <?php echo $_SESSION['userName'];?></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Cerrar sesión</a>
+                <a class="text-white  nav-link" href="index.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar sesión</a>
             </li>
 
 

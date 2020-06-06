@@ -1,16 +1,16 @@
 <?php 
 
-$consulta= "SELECT id,nombre,precio FROM productos;";
+$consulta= "SELECT id,producto,precio FROM productos;";
 $result=mysqli_query($conn,$consulta);
 
 ?>
 
         
-    <div class="container py-4" >
+    <div class="container-fluid justify-content-center py-4" >
 
     <div class="row">
-            <div class="col-lg-12">                    
-                <table class="table table-striped table-hover table-bordered font-weight-bolder " id="productoList">
+            <div class="px-5 m-auto justify-content-center" >                    
+                <table class="table table-striped  table-sm table-hover table-bordered font-weight-bold "style="font-family: Trebuchet MS;" id="productoList">
                     <thead class="thead-dark">
                     <tr>
                         <td>#</td>
@@ -36,12 +36,12 @@ $result=mysqli_query($conn,$consulta);
                     ?>
                     <tr>
                           <td><?php echo $datos['id'] ?></td>
-                          <td style="width: 50%;" ><?php echo utf8_encode( $datos['nombre']) ?></td>
+                          <td style="width: 50%;" ><?php echo utf8_encode( $datos['producto']) ?></td>
                           <td><?php echo "$"." ". $datos['precio'] ?></td>
                           <td>
-                             <div class="row">
-                                <div class="p-1"><a href="eliminarDato.php?tabla=productos&id=<?php echo $datos['id']?>" class="btn btn-danger"><i class="fas fa-trash"></i></a></div>
-                                <div class="p-1"><a href="./components/editarDato.php?tabla=productos&id=<?php echo $datos['id'];?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></div>
+                             <div class="row px-3">
+                                <div ><a href="./util/eliminarDato.php?tabla=productos&id=<?php echo $datos['id']?>" onclick="return confirmar();" class="btn btn-danger"><i class="fas fa-trash"></i></a></div>&nbsp;
+                                <div ><a href="./components/editarDato.php?tabla=productos&id=<?php echo $datos['id'];?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></div>
                               </div>
                           </td>
                           </tr>
@@ -52,6 +52,17 @@ $result=mysqli_query($conn,$consulta);
             </div>
     </div>
     </div>   
+
+
+<script>
+function confirmar()
+{
+	if(confirm('Estas apunto de eliminar este registro . ¿Estas seguro ?'))
+		return true;
+	else
+		return false;
+}
+</script>
 
 
    

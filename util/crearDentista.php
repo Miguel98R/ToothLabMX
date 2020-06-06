@@ -9,7 +9,8 @@ $domicilioDentista =$_POST['inputDomicilio'];
 $color=$_POST['color'];
 
 
-$consulta="INSERT INTO dentistas(nombre,email,telPersonal,telConsultorio,domicilio,color)VALUES('$nombreDentista','$emailDentista','$celularDentista','$telefonoConsultorio','$domicilioDentista','$color');";
+$consulta="INSERT INTO dentistas(nombre,email,telConsultorio,telPersonal,domicilio,color)VALUES
+('$nombreDentista','$domicilioDentista','$emailDentista','$telefonoConsultorio','$celularDentista','$color');";
 
 $resultDentista = $conn->query($consulta) or die (mysqli_error($conn));
 
@@ -17,7 +18,11 @@ $resultDentista = $conn->query($consulta) or die (mysqli_error($conn));
 if($resultDentista==true){
     echo'<script type="text/javascript">
         alert("Dentista registrado con exito");
+         setTimeout(function() {alert.close();}, 2000);
+   
         window.location.href="../dashboard.php";
+
+           
         </script>';
 }else{
     echo'<script type="text/javascript">

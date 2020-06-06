@@ -11,10 +11,10 @@
 
    <div class="tab-content">
     <div id="listaProductos" class="tab-pane fade show active">
-     <?php include("components/listadoProductos.php "); ?> 
+     <?php include "components/listadoProductos.php "; ?> 
     </div>
     <div id="newroducto" class="tab-pane fade">
-     <?php include("components/registroProductos.php"); ?> 
+     <?php include "components/registroProductos.php" ; ?> 
      </div>
     
   </div>

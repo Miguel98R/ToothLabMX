@@ -5,7 +5,7 @@ $nombreProducto = $_POST['inputNombreProducto'];
 $precio = $_POST['inputPrecio'];
 
 
-$consulta = "INSERT INTO productos (nombre,precio) VALUES ('$nombreProducto','$precio');";
+$consulta = "INSERT INTO productos (producto,precio) VALUES ('$nombreProducto','$precio');";
 
 $result = $conn->query($consulta) or die (mysqli_error($conn));
 

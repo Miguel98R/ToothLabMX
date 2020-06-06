@@ -10,7 +10,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <input type="number" class="form-control inputDato" name="inputPrecio" id="inputPrecio"
-                        placeholder="&#xf155; Ingresa su precio" style="font-family:Arial, FontAwesome" required>
+                        placeholder="&#xf155; Ingresa su precio" style="font-family:Arial, FontAwesome" >
 
                 </div>
                 

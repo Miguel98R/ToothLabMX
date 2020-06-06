@@ -1,21 +1,33 @@
 
 <?php 
 
-   include("conexion.php");
+   include "conexion.php";
+   $id = $_GET['id'];
+    $tabla = $_GET['tabla'];
 
 
 if($_GET['tabla'] == "productos"){
 
-    $id = $_GET['id'];
-    $tabla = $_GET['tabla'];
+    
 
     $nombre = $_POST['nombre'];
     $precio = $_POST['precio'];
 
-     $consulta ="UPDATE $tabla SET nombre = '$nombre', precio= '$precio' WHERE id = '$id';";
+     $consulta ="UPDATE $tabla SET producto = '$nombre', precio= '$precio' WHERE id = '$id';";
            
 
 }else if($_GET['tabla'] == "dentistas"){
+
+    $nombre = $_POST['nombre'];
+    $domicilio = $_POST['domicilio'];
+    $telPersonal = $_POST['telPersonal'];
+    $telConsultorio = $_POST['telConsultorio'];
+    $email = $_POST['email'];
+    $color = $_POST['color'];
+
+    $consulta = "UPDATE $tabla SET nombre = '$nombre' , email='$email',telPersonal = '$telPersonal',telConsultorio = '$telConsultorio',domicilio='$domicilio',color='$color' WHERE id = '$id';";
+
+
 
 }
 

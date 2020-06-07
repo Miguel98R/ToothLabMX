@@ -9,16 +9,14 @@
     $comentarioNuevo = $_POST['comentarioNuevo'];
     $dentistaNuevo= $_POST['dentistaEditar'];
     $pasienteNuevo= $_POST['pacientEeditar'];
+    $nuevaFecha = $_POST['fechaSalidaNuevo'];
 
   
 
     
-    $consultaridDentista= "SELECT id FROM dentistas WHERE nombre='$dentistaNuevo';";
-    $resultidDentista = $conn->query($consultaridDentista) or die(mysqli_error($conn));
-    $datoidDentista=$resultidDentista->fetch_assoc();
-    $idDentista = $datoidDentista['id'];
+   
 
-    $consulta = "SELECT paciente,id_dentista,comentario,status FROM orden_cabeza WHERE id='$id';";
+    $consulta = "SELECT paciente,id_dentista,comentario,fechaSaliente,status FROM orden_cabeza WHERE id='$id';";
     $result = $conn->query($consulta) or die (mysqli_error($conn));
     $datos=$result->fetch_assoc();
 
@@ -27,8 +25,18 @@
          
         $dentistaNuevo = $datos['id_dentista'] ;
      }else{
+            $consultaridDentista= "SELECT id FROM dentistas WHERE nombre='$dentistaNuevo';";
+            $resultidDentista = $conn->query($consultaridDentista) or die(mysqli_error($conn));
+            $datoidDentista=$resultidDentista->fetch_assoc();
+            $idDentista = $datoidDentista['id'];
+         
         $dentistaNuevo = $idDentista;
      }
+
+      if($nuevaFecha == null || $nuevaFecha == " "){
+         
+        $nuevaFecha = $datos['fechaSaliente'] ;
+      }
 
 
      if($pasienteNuevo == null || $pasienteNuevo == " "){
@@ -50,7 +58,7 @@
         $comentarioNuevo = $datos["comentario"]." / ".$comentarioNuevo;
     }
 
-    $actualizar = "UPDATE orden_cabeza SET paciente='$pasienteNuevo',id_dentista='$dentistaNuevo',comentario='$comentarioNuevo',status = '$statusNuevo' WHERE id='$id'; ";
+    $actualizar = "UPDATE orden_cabeza SET paciente='$pasienteNuevo',id_dentista='$dentistaNuevo',comentario='$comentarioNuevo',fechaSaliente='$nuevaFecha',status = '$statusNuevo' WHERE id='$id'; ";
         
     $result = $conn->query($actualizar) or die($conn->error);
 

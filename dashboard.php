@@ -42,16 +42,16 @@ if (!isset($user)) {
 <nav class="navbar  navbar-expand-sm">
  <ul class="nav nav-tabs">
     <li class="nav-item active bg-transparent" >
-      <a class="nav-link active" id="tab-1" data-toggle="tab" role="tab" href="#NuevaOrden" aria-selected="true" aria-controls="NuevaOrden">Pedidos</a>
+      <a class="nav-link active" id="tab-1" data-toggle="tab" role="tab" href="#NuevaOrden" aria-selected="true" aria-controls="NuevaOrden"><i class="far fa-clipboard"></i>&nbsp;Pedidos</a>
     </li>
      <li class="nav-item">
-      <a class="nav-link" id="tab-2" data-toggle="tab" role="tab" href="#HistorialView" aria-selected="false" aria-controls="HistorialView">Historial Ordenes</a>
+      <a class="nav-link" id="tab-2" data-toggle="tab" role="tab" href="#HistorialView" aria-selected="false" aria-controls="HistorialView"><i class="fas fa-history"></i>&nbsp;Historial Ordenes</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="tab-4" data-toggle="tab" role="tab" href="#DentistasView" aria-selected="false" aria-controls="DentistasView">Dentistas</a>
+      <a class="nav-link" id="tab-4" data-toggle="tab" role="tab" href="#DentistasView" aria-selected="false" aria-controls="DentistasView"><i class="fas fa-tooth"></i>&nbsp;Dentistas</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="tab-5" data-toggle="tab" role="tab" href="#ProductosView" aria-selected="false" aria-controls="ProductosView">Productos</a>
+      <a class="nav-link" id="tab-5" data-toggle="tab" role="tab" href="#ProductosView" aria-selected="false" aria-controls="ProductosView"><i class="fas fa-list-ol"></i>&nbsp;Productos</a>
     </li>
   
   </ul>

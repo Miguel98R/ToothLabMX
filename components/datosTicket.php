@@ -1,6 +1,6 @@
 <?php 
 
-    $consultaProductos ="SELECT T1.cantidad,T2.producto,T1.color,T1.od FROM orden_productos_description T1 INNER JOIN productos T2 ON T1.id_producto = T2.id WHERE id_orden=$folio ;";
+    $consultaProductos ="SELECT T1.id,T1.cantidad,T2.producto,T1.color,T1.od FROM orden_productos_description T1 INNER JOIN productos T2 ON T1.id_producto = T2.id WHERE T1.id_orden=$folio ;";
     $resultProducto=mysqli_query($conn,$consultaProductos);
 
     $color="SELECT color from dentistas WHERE nombre='$dentista';";
@@ -15,7 +15,7 @@
 <table class="table text-left table-bordered table-hover table-sm ">
   <tbody>
   <div style="background:<?php echo $ticketColor;?>;">
-  <h5 class="text-center py-2 font-weight-bolder text-white">Orden</h5>
+  <h5 class="text-center py-2 font-weight-bolder text-white"><i class="far fa-clipboard"></i> &nbsp;Orden</h5>
     </div>
     <tr>
       <th ><p><label style="color:<?php echo $ticketColor;?>;">Entrada:</label> &nbsp;<?php echo date_format($fecha1,"d/m/Y");?></p></th>
@@ -54,6 +54,7 @@
       <th scope="col">PRODUCTOS</th>
       <th scope="col">COLOR</th>
       <th scope="col">OD</th>
+      <th scope="col">ACCIÓN</th>
     
     </tr>
   </thead>
@@ -68,6 +69,7 @@
       <td><?php echo $datos['producto'];?></td>
       <td><?php echo $datos['color'];?></td>
        <td><?php echo $datos['od'];?></td>
+       <td><a title="Editar producto"  href="./components/editarDato.php?tabla=orden_productos_description&id=<?php echo $datos['id'];?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
 
     </tr>
     <?php } ?>
@@ -122,8 +124,8 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade bd-example-modal-xl" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-xl">
+<div class="modal fade " id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Editar</h5>

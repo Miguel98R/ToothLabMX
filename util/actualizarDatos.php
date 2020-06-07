@@ -29,6 +29,25 @@ if($_GET['tabla'] == "productos"){
 
 
 
+}else if($_GET['tabla'] == "orden_productos_description"){
+
+    $producto = $_POST['productoNew'];
+    $cantidad = $_POST['cantidadNew'];
+    $color = $_POST['colorNew'];
+    $od = $_POST['odNew'];
+    
+
+      $consultaridProducto= "SELECT id FROM productos WHERE producto='$producto';";
+                $resultidProducto = $conn->query($consultaridProducto) or die(mysqli_error($conn));
+                $datoidProducto=$resultidProducto->fetch_assoc();
+                $idProducto = $datoidProducto['id'];
+
+    
+
+    $consulta = "UPDATE $tabla SET  cantidad='$cantidad', id_producto = '$idProducto' ,color = '$color',od='$od' WHERE id = '$id';";
+
+
+
 }
 
 

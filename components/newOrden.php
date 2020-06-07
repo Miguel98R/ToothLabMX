@@ -62,7 +62,7 @@ function changeColor(x)
 <table class="table text-left table-bordered table-hover table-sm ">
   <tbody>
     <div class="bg-dark">
-  <h5 class="text-center py-2 font-weight-bolder text-white">Crear orden</h5>
+  <h5 class="text-center py-2 font-weight-bolder text-white"><i class="fas fa-plus"></i>&nbsp; Crear orden</h5>
     </div>
  
     <tr>

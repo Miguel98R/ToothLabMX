@@ -1,6 +1,7 @@
 <?php 
     include "conexion.php";
-    include 'impresion.php';
+    
+    require '../fpdf/fpdf.php';
   
     include "conexion.php";
 
@@ -97,10 +98,10 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
 
     $pdf->SetFont('Arial','B',14);
     $pdf->SetTextColor($r,$g,$b);
-    $pdf->Cell(25,6,'Folio:',1,0,'L');
+    $pdf->Cell(15,6,'Folio:',1,0,'L');
     $pdf->SetTextColor(0,0,0);
   $pdf->SetFont('Arial','B',14);
-    $pdf->Cell(45,6,$folio,1,1,'L');
+    $pdf->Cell(55,6,$folio,1,1,'L');
 
     $pdf->Ln(4);
 
@@ -113,10 +114,10 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
 
     $pdf->SetFont('Arial','B',14);
     $pdf->SetTextColor($r,$g,$b);
-    $pdf->Cell(25,6,'Dr. :',1,0,'L');
+    $pdf->Cell(15,6,'Dr. :',1,0,'L');
     $pdf->SetTextColor(0,0,0);
    $pdf->SetFont('Arial','B',14);
-    $pdf->Cell(45,6,mb_strtoupper($dentista),1,1,'L');
+    $pdf->Cell(55,6,mb_strtoupper($dentista),1,1,'L');
 
     $pdf->Ln(4);
 
@@ -129,10 +130,10 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
 
     $pdf->SetFont('Arial','B',14);
     $pdf->SetTextColor($r,$g,$b);
-     $pdf->Cell(25,6,'Px:',1,0,'L');
+     $pdf->Cell(15,6,'Px:',1,0,'L');
     $pdf->SetTextColor(0,0,0);
    $pdf->SetFont('Arial','B',14);
-    $pdf->Cell(46,6,mb_strtoupper($paciente),1,1,'L');
+    $pdf->Cell(55,6,mb_strtoupper($paciente),1,1,'L');
 
       $pdf->Ln(4);
 
@@ -152,7 +153,7 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
     
    
      $pdf->Ln(5);
-     $pdf->Cell(140,6,utf8_decode("DESCRIPCIÓN"),0,1,'C');
+     $pdf->Cell(130,6,utf8_decode("DESCRIPCIÓN"),0,1,'C');
       $pdf->Ln(5);
 
   

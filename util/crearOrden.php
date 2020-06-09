@@ -18,16 +18,12 @@ $o_d="";
                 $datoidProducto=$resultidProducto->fetch_assoc();
                 $idProducto = $datoidProducto['id'];
 
-                $consultaridDentista= "SELECT id FROM dentistas WHERE nombre='$dentista';";
-                $resultidDentista = $conn->query($consultaridDentista) or die(mysqli_error($conn));
-                $datoidDentista=$resultidDentista->fetch_assoc();
-                $idDentista = $datoidDentista['id'];
-
+            
 
 
 //insertamos los datos que corresponden en la cabecera
 $insertarCabeza = "INSERT INTO orden_cabeza (paciente,id_dentista,fechaEntrante,fechaSaliente,comentario) 
-                    VALUES ('$paciente','$idDentista','$entrada','$salida','$comentario') ;";
+                    VALUES ('$paciente','$dentista','$entrada','$salida','$comentario') ;";
 $resultCabeza = $conn->query($insertarCabeza) or die(mysqli_error($conn));
 
 //consultamos el id de la orden
@@ -40,7 +36,7 @@ $idOrden = $datoid['id'];
 
 
 
-$consultarUsoDentista = "SELECT nUsado FROM dentistas WHERE nombre='$dentista';";
+$consultarUsoDentista = "SELECT nUsado FROM dentistas WHERE id='$dentista';";
 
 $resultUsoDentista = $conn->query($consultarUsoDentista) or die(mysqli_error($conn));
 
@@ -49,7 +45,7 @@ $usoActualDentista = $datoUsoDentista['nUsado'];
 
 $nuevoUsoDentista = $usoActualDentista + 1;
 
-$actualizarUsoDentista = "UPDATE dentistas SET nUsado = '$nuevoUsoDentista' WHERE nombre='$dentista';";
+$actualizarUsoDentista = "UPDATE dentistas SET nUsado = '$nuevoUsoDentista' WHERE id='$dentista';";
 $resultUsoActualizado = $conn->query($actualizarUsoDentista) or die($conn->error);
 
 
@@ -60,12 +56,14 @@ if($_POST['od'] != "")
        		 // realizamos el ciclo
                 while(list($key,$value) = each($_POST['od'])) 
                 {
+                    // if($value < =18 && $value < = 48  )
                 
-                    $o_d = $value." ".$o_d;
+                    $o_d = $o_d. " ".$value;
                
                 }
    		 }
 }
+
 
 //insertamos el producto y su cantidad
  $insertarProducto="INSERT INTO orden_productos_description (cantidad,id_producto,color,od,id_orden) VALUES ('$cantidad','$idProducto','$color','$o_d','$idOrden');";

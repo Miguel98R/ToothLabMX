@@ -24,13 +24,6 @@
      if($dentistaNuevo == null || $dentistaNuevo == " "){
          
         $dentistaNuevo = $datos['id_dentista'] ;
-     }else{
-            $consultaridDentista= "SELECT id FROM dentistas WHERE nombre='$dentistaNuevo';";
-            $resultidDentista = $conn->query($consultaridDentista) or die(mysqli_error($conn));
-            $datoidDentista=$resultidDentista->fetch_assoc();
-            $idDentista = $datoidDentista['id'];
-         
-        $dentistaNuevo = $idDentista;
      }
 
       if($nuevaFecha == null || $nuevaFecha == " "){

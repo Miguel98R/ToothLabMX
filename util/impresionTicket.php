@@ -166,11 +166,11 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
     $pdf->SetTextColor(0,0,0);
     
        $pdf->SetFont('Arial','B',11);
-     $pdf->Multicell(130,6,"COLOR: ".$datos['color'], 1,1);
+     $pdf->Multicell(130,6,"COLOR: ". mb_strtoupper($datos['color']), 1,1);
      $pdf->SetFont('Arial','B',14);
     $pdf->Cell(23,6,$datos['cantidad']." PZS",1,0,'C');
      $pdf->SetFont('Arial','B',14);
-    $pdf->Cell(107,6,$datos['producto'],1,0,'C');
+    $pdf->Cell(107,6,mb_strtoupper($datos['producto']),1,0,'C');
      
   
     

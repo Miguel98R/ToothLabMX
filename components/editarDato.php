@@ -164,7 +164,11 @@ if (!isset($user)) {
 
                      <form action="../util/actualizarDatos.php?tabla=<?php echo $tabla;?>&id=<?php echo $id;?>" method="post" autocomplete="off">
                             
-                            <div class="container py-3">
+                            <div class="container py-3 ">
+                                <div class="text-center">
+                                 <img  src="../img/diagrama.jpg">
+                                </div>
+                           
                                 <div class="row">
                                     <div class="col-md-6">
                                         <p>

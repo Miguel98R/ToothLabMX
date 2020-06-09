@@ -66,8 +66,8 @@
     <tr>
    
       <td><?php echo $datos['cantidad'];?></td>
-      <td><?php echo $datos['producto'];?></td>
-      <td><?php echo $datos['color'];?></td>
+      <td><?php echo mb_strtoupper($datos['producto']);?></td>
+      <td><?php echo mb_strtoupper($datos['color']);?></td>
        <td><?php echo $datos['od'];?></td>
        <td><a title="Editar producto"  href="./components/editarDato.php?tabla=orden_productos_description&id=<?php echo $datos['id'];?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
 

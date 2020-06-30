@@ -35,7 +35,7 @@ $result=mysqli_query($conn,$consulta);
                 <table class="table table-striped table-sm table-hover table-bordered font-weight-bold "style="font-family: Trebuchet MS;"  id="hisList">
                     <thead class="thead-dark">
                     <tr>
-                      <td>No.Folio</td>
+                      <td>Folio</td>
                       <td >Fecha entrada</td>
                          <td>Ultima actualización</td>
                       <td >Dentista</td>
@@ -51,7 +51,7 @@ $result=mysqli_query($conn,$consulta);
                     </thead>
                     <tfoot class="thead-dark">
                     <tr>
-                     <td>No.Folio</td>
+                     <td>Folio</td>
                       <td >Fecha entrada</td>
                        <td >Ultima actualización</td>
                       <td >Dentista</td>

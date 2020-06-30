@@ -53,6 +53,7 @@ if (!isset($user)) {
     <li class="nav-item">
       <a class="nav-link" id="tab-5" data-toggle="tab" role="tab" href="#ProductosView" aria-selected="false" aria-controls="ProductosView"><i class="fas fa-list-ol"></i>&nbsp;Productos</a>
     </li>
+    
   
   </ul>
 </nav>
@@ -72,7 +73,7 @@ if (!isset($user)) {
       <div class="tab-pane fade" id="ProductosView" aria-labelledby="tab-5" role="tabpanel">
         <?php include "productos.php"; ?>
         </div>
-        
+       
       
     
     </div>

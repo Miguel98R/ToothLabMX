@@ -48,6 +48,28 @@ if($_GET['tabla'] == "productos"){
 
 
 
+}elseif($_GET['tabla'] == "cuentas"){
+
+    $abono = $_POST["abono"];
+$id = $_GET["id"];
+
+echo $abono;
+echo $id;
+
+ $abonos = "SELECT abono FROM cuentas WHERE id_dentista='$id';";
+    $result = $conn->query($abonos) or die (mysqli_error($conn));
+    $datos=$result->fetch_assoc();
+    $abonoAnterior = $datos['abono'] ;
+
+    $abonoTotal = $abonoAnterior + $abono;
+
+  $consulta = "UPDATE cuentas SET abono='$abonoTotal' WHERE id_dentista='$id'; ";
+        
+ 
+
+     
+           
+
 }
 
 

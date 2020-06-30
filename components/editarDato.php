@@ -94,7 +94,7 @@ if (!isset($user)) {
                             <div class="container py-3">
                                 <div>
                                     <label>Nombre del producto:</label>
-                                    <input type="text" class="w-100 inputDato" name="nombre"   value="<?php echo $datos['producto'];?>"  placeholder="<?php echo $datos['nombre'];?>" />
+                                    <input type="text" class="w-100 inputDato" name="nombre"  value="<?php echo $datos['producto'];?>"  placeholder="<?php echo $datos['nombre'];?>" />
                                     
                                     <label>Precio $:</label>
                                     <input type="text" class="w-100 inputDato" name="precio" value="<?php echo $datos['precio'];?> " placeholder="<?php echo $datos['precio']."00";?>" />
@@ -242,6 +242,75 @@ if (!isset($user)) {
 
 
 
+            
+                <?php } elseif($tabla=="cuentas"){ 
+                      
+                    
+                    ?>
+
+
+
+                     <form action="../util/actualizarDatos.php?tabla=<?php echo $tabla;?>&id=<?php echo $id;?>" method="post" autocomplete="off">
+                            
+                            <div class="container py-3 text-center">
+                              
+                                $ <input type="number" class="inputDato" name="abono" id="abono" min="0" placeholder=" Ingresa nuevo abono">
+
+                               
+                            </div> 
+                            
+                            <div class="text-center py-2">
+                             <button type="submit" class="btn btn-success text-white">Agregar abono</button>
+                             <a href="../dashboard.php" class="btn btn-info" role="button">Cancelar</a>
+                           </div>
+
+
+                        </form>
+
+
+
+
+
+
+
+
+
+            
+                <?php } elseif($tabla=="datos"){ 
+
+                    $consulta="SELECT * FROM orden_cabeza T1 INNER JOIN orden_productos_description T2 ON T2.id_orden=T1.id WHERE T1.id_dentista = '$id';";
+                      
+                    
+                    ?>
+
+
+
+                     <form action="../util/actualizarTotalDescripcion.php?id=<?php echo $id;?>" method="post" autocomplete="off">
+                            
+                            <div class="container py-3 text-center">
+                              
+                                $ <input type="number" class="inputDato" name="abono" id="abono" min="0" placeholder=" Ingresa nuevo abono">
+
+                               
+                            </div> 
+                            
+                            <div class="text-center py-2">
+                             <button type="submit" class="btn btn-success text-white">Agregar abono</button>
+                             <a href="../dashboard.php" class="btn btn-info" role="button">Cancelar</a>
+                           </div>
+
+
+                        </form>
+
+
+
+
+
+
+
+
+
+            
                 <?php } ?>
 </div>
     

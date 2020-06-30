@@ -73,8 +73,8 @@ $result=mysqli_query($conn,$consulta);
                                 <div >
                                   <a title="Cambiar status" href="./util/eliminarDato.php?tabla=dentistas&id=<?php echo $datos['id']?>" onclick="return confirmarDc();" class="btn btn-info"><i class="fas fa-clipboard-check"></i></a></div>&nbsp;
                                 <div >
-                                <a title="Editar Registro" href="./components/editarDato.php?tabla=dentistas&id=<?php echo $datos['id'];?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></div>
-                              </div>
+                               <a title="Editar Registro" href="./components/editarDato.php?tabla=dentistas&id=<?php echo $datos['id'];?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></div>
+                               </div>
                           </td>
                           </tr>
                           <?php }?>

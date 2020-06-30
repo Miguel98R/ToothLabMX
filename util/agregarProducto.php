@@ -9,10 +9,20 @@
    $color = $_POST['colorNuevo'];
    $o_d="";
 
-     $consultaridProducto= "SELECT id FROM productos WHERE producto='$producto';";
+     $consultaridProducto= "SELECT id,precio FROM productos WHERE producto='$producto';";
                 $resultidProducto = $conn->query($consultaridProducto) or die(mysqli_error($conn));
                 $datoidProducto=$resultidProducto->fetch_assoc();
                 $idProducto = $datoidProducto['id'];
+                 $precio = $datoidProducto['precio'];
+
+    //CREAMOS LA NUEVA CUENTA DE LA ORDEN
+
+$totalOrden = $cantidad * $precio;
+
+
+
+$insertarCuenta = "INSERT INTO cuentas (totalOrden,abonadOrden,restanteOrden,cant,id_producto,id_orden) VALUES ('$totalOrden',0,'$totalOrden','$cantidad','$idProducto','$idOrden');";
+$resultCuenta = $conn->query($insertarCuenta) or die (mysqli_error($conn));
 
 
 if($_POST['od'] != "")

@@ -2,7 +2,7 @@
      <div class="contenedor">
 
          <div class="parrafo">
-             <p>© 2020 Seven | Todos los derechos reservados</p>
+             <p>© 2020 Laboratorio dental Seven | Todos los derechos reservados</p>
          </div>
      </div>
 

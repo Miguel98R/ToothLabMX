@@ -12,13 +12,9 @@ $cantidad = $_POST['cantidad'];
 $color = $_POST['color'];
 $producto =$_POST['producto'];
 $o_d="";
+$totalOrden=0;
 
-  $consultaridProducto= "SELECT id FROM productos WHERE producto='$producto';";
-                $resultidProducto = $conn->query($consultaridProducto) or die(mysqli_error($conn));
-                $datoidProducto=$resultidProducto->fetch_assoc();
-                $idProducto = $datoidProducto['id'];
-
-            
+ 
 
 
 //insertamos los datos que corresponden en la cabecera
@@ -31,6 +27,17 @@ $consultarIdCabeza = "SELECT MAX(id) as id FROM orden_cabeza;";
 $resultIdCabeza = $conn->query($consultarIdCabeza) or die(mysqli_error($conn));
 $datoid=$resultIdCabeza->fetch_assoc();
 $idOrden = $datoid['id'];
+
+
+
+ $consultaridProducto= "SELECT id,precio FROM productos WHERE producto='$producto';";
+                $resultidProducto = $conn->query($consultaridProducto) or die(mysqli_error($conn));
+                $datoidProducto=$resultidProducto->fetch_assoc();
+                $idProducto = $datoidProducto['id'];
+                $precio = $datoidProducto['precio'];
+
+//CREAMOS LA NUEVA CUENTA DE LA ORDEN
+
 
 //consultamos el dentista que corresponde al a orden para despues utilizarle el uso que tiene
 
@@ -64,6 +71,12 @@ if($_POST['od'] != "")
    		 }
 }
 
+
+ if( $idProducto == 20 ||$idProducto == 21 || $idProducto ==22 || $idProducto == 23 || $idProducto ==24 || $idProducto ==25 ||$idProducto == 42 || $idProducto ==1 ||$idProducto ==52 ||$idProducto ==49 ){
+    $cantidad = 1;
+ }else {
+     $cantidad = $_POST['cantidad'];
+ }
 
 //insertamos el producto y su cantidad
  $insertarProducto="INSERT INTO orden_productos_description (cantidad,id_producto,color,od,id_orden) VALUES ('$cantidad','$idProducto','$color','$o_d','$idOrden');";

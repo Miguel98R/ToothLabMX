@@ -14,8 +14,15 @@ $consulta="INSERT INTO dentistas(nombre,email,telConsultorio,telPersonal,domicil
 
 $resultDentista = $conn->query($consulta) or die (mysqli_error($conn));
 
+$consultaId = "SELECT MAX(id) AS idDentista FROM dentistas";
+$resulId = $conn->query($consultaId) or die (mysqli_error($conn));
+$datoid=$resulId->fetch_assoc();
+$idDentista = $datoid['idDentista'];
 
-if($resultDentista==true){
+$insertarNuevaCuenta = "INSERT INTO cuentas (id_dentista) VALUE ('$idDentista');";
+$resultInsertar = $conn->query($insertarNuevaCuenta) or die (mysqli_error($conn));
+
+if($resultInsertar==true){
     echo'<script type="text/javascript">
         alert("Dentista registrado con exito");
          setTimeout(function() {alert.close();}, 2000);

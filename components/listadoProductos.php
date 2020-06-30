@@ -36,7 +36,7 @@ $result=mysqli_query($conn,$consulta);
                     ?>
                     <tr>
                           <td><?php echo $datos['id'] ?></td>
-                          <td style="width: 50%;" ><?php echo utf8_encode( $datos['producto']) ?></td>
+                          <td style="width: 50%;" ><?php echo mb_strtoupper( $datos['producto']) ?></td>
                           <td><?php echo "$"." ". $datos['precio'] ?></td>
                           <td>
                              <div class="row px-3">

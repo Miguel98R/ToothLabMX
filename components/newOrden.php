@@ -58,7 +58,7 @@ function changeColor(x)
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 col-sm-12 col-md-7 col-lg-7">
+    <div class="col-12 col-sm-12 col-md-7 col-lg-7 py-2">
       
 <div  style="font-size: 14px; border: 7px solid black; border-radius:20px;">
    <form action="util/crearOrden.php" method="POST" autocomplete="off">
@@ -115,7 +115,7 @@ function changeColor(x)
                         <?php
                             while($datos=$resultProducto->fetch_assoc()){
                             ?>
-                            <option  value="<?php echo strtoupper($datos['producto']);?>"> </option>
+                            <option  value="<?php echo strtoupper($datos['producto']);?>"></option>
                             <?php }?>
                             </datalist></td>
       <td width="230"> <input list="colores" style="font-size: 14px;"   name="color" class="inputDato w-100" placeholder="Color:" >
@@ -242,7 +242,7 @@ function changeColor(x)
 
    </div>
 
-    <div class="text-center col-12 col-sm-12 col-md-5 col-lg-5">
+    <div class="text-center col-12 col-sm-12 col-md-5 col-lg-5 py-2">
   
       
            

@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/b46c20e3c5.js" crossorigin="anonymous"></script>
-    
-    <title>Seven</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design for Bootstrap</title>
+  <!-- MDB icon -->
+     <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+ <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <div class="container">
+  <!-- Start your project here-->  
+  
+
+
+
+
+<div class="container">
 
         <div class="row">
             <div class="col-md-4"></div>
@@ -50,19 +62,37 @@
 
     <?php include("components/footer.php"); ?>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.4.1.slim.min.js">
-    </script>
-    <script src="js/popper.min.js">
-    </script>
-    <script src="js/bootstrap.min.js">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="js/sweetAlert.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="js/jquery-3.4.1.slim.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="js/sweetAlert.js"></script>
 
 </body>
-
-
-
 </html>

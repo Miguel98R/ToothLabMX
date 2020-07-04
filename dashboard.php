@@ -1,13 +1,13 @@
 <?php
 
-session_start();
-$user = $_SESSION['userName'];
+// session_start();
+// $user = $_SESSION['userName'];
 
-if (!isset($user)) {
+// if (!isset($user)) {
 
-  header("location: index.php");
-}
-  ?>
+//   header("location: index.php");
+// }
+  ?> 
 
 <!DOCTYPE html>
 <html lang="es">

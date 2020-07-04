@@ -39,7 +39,7 @@
                         <h2 class="font-weight-bolder text-white">Iniciar sesión</h2>
                     </div>
  <!-- <form action="util/validateLogin.php" method="post" autocomplete="off" onsubmit="return validar();"> -->
-                   
+                 
                     <form action="dashboard.php" method="post" autocomplete="off" >
                         <div class="text-center">
                             <div class="py-2"><input class="inputDato" type="text" id="user" name="user"
@@ -92,7 +92,7 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
-  <script type="text/javascript" src="js/navVertical.js"></script>
+  
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="js/sweetAlert.js"></script>
 

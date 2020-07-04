@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design for Bootstrap</title>
+  <title>Seven dental</title>
   <!-- MDB icon -->
      <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
  <!-- Font Awesome -->
@@ -91,6 +91,7 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
+  <script type="text/javascript" src="js/navVertical.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="js/sweetAlert.js"></script>
 

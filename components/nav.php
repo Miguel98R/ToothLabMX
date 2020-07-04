@@ -1,21 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-  
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <div class="navbar-nav ml-auto">
-
-<li class="nav-item">
-                <a class="text-white  nav-link" href="#"><i class="fas fa-house-user"></i> &nbsp; Bienvenid@: <?php echo $_SESSION['userName'];?></a>
-            </li>
-            <li class="nav-item">
-                <a class="text-white  nav-link" href="index.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar sesión</a>
-            </li>
 
 
-
-            </ul>
-        </div>
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    
+   
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item ">
+       <a class="nav-link white-text" href="index.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar sesión</a>
+ 
+      </li>
+    </ul>
+  </div>
 </nav>
+<!--/.Navbar -->
+

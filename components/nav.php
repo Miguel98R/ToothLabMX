@@ -1,8 +1,8 @@
 
 
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color-dark lighten-1">
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
     aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

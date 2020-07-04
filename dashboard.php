@@ -47,6 +47,9 @@ if (!isset($user)) {
        <?php include("components/nav.php") ?>
     </header>
 
+
+    
+
 <nav class="navbar  navbar-expand-sm">
  <ul class="nav nav-tabs">
     <li class="nav-item active bg-transparent" >

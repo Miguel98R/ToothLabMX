@@ -38,8 +38,9 @@
                     <div class="text-center ">
                         <h2 class="font-weight-bolder text-white">Iniciar sesión</h2>
                     </div>
-
-                    <form action="util/validateLogin.php" method="post" autocomplete="off" onsubmit="return validar();">
+ <!-- <form action="util/validateLogin.php" method="post" autocomplete="off" onsubmit="return validar();"> -->
+                   
+                    <form action="dashboard.php" method="post" autocomplete="off" >
                         <div class="text-center">
                             <div class="py-2"><input class="inputDato" type="text" id="user" name="user"
                                     placeholder="Ingresa tu usuario"></div>

@@ -40,8 +40,8 @@ $result=mysqli_query($conn,$consulta);
                           <td><?php echo "$"." ". $datos['precio'] ?></td>
                           <td>
                              <div class="row px-3">
-                                <div ><a title="Eliminar producto"  href="./util/eliminarDato.php?tabla=productos&id=<?php echo $datos['id']?>" onclick="return confirmar();" class="btn btn-danger"><i class="fas fa-trash"></i></a></div>&nbsp;
-                                <div ><a title="Editar producto"  href="./components/editarDato.php?tabla=productos&id=<?php echo $datos['id'];?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></div>
+                                <div class="col"><a title="Eliminar producto"  href="./util/eliminarDato.php?tabla=productos&id=<?php echo $datos['id']?>" onclick="return confirmar();" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></div>&nbsp;
+                                <div class="col"><a title="Editar producto"  href="./components/editarDato.php?tabla=productos&id=<?php echo $datos['id'];?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a></div>
                               </div>
                           </td>
                           </tr>

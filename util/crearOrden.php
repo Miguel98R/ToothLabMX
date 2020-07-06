@@ -63,7 +63,7 @@ if($_POST['od'] != "")
        		 // realizamos el ciclo
                 while(list($key,$value) = each($_POST['od'])) 
                 {
-                    // if($value < =18 && $value < = 48  )
+                    
                 
                     $o_d = $o_d. " ".$value;
                

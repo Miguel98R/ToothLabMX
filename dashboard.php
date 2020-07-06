@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-$user = $_SESSION['userName'];
+$psw = $_SESSION['password'];
 
-if (!isset($user)) {
+if (!isset($psw)) {
 
   header("location: index.php");
 }
@@ -76,16 +76,8 @@ if (!isset($user)) {
     <script type="text/javascript" src="js/main.js"></script>
   <!-- Your custom scripts (optional) -->
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-  <script src="js/sweetAlert.js"></script>
-    <script src="js/adminValidation.js "></script>
-     
-    
-    
 
-   
-
-
-
+  
 </body>
 
 </html>

@@ -1,11 +1,12 @@
- <footer>
-     <div class="contenedor">
+<!-- Footer -->
+<footer class=" fixed-bottom blue-gradient">
 
-         <div class="parrafo">
-             <p>© 2020 Laboratorio dental Seven | Todos los derechos reservados</p>
-         </div>
-     </div>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+    <p class="text-white font-weight-bold"> ©2020 Desarrollado por MAE-KO® para: Laboratorio Dental Seven   </p>
 
-     </div>
+  </div>
+  <!-- Copyright -->
 
- </footer>
+</footer>
+<!-- Footer -->

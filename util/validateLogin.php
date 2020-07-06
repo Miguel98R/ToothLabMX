@@ -3,12 +3,11 @@
 include("conexion.php");
 session_start();
 
-global $user ;
-$user = $_POST['user'];
+
 $psw = $_POST['psw'];
 
 
-$consulta = "SELECT * FROM usuarios WHERE usuario='$user' and contrasena='$psw'";
+$consulta = "SELECT * FROM usuarios WHERE  contrasena='$psw'";
 
 $result=mysqli_query($conn,$consulta);
 
@@ -17,14 +16,14 @@ $filas=mysqli_num_rows($result);
 $datos=$result->fetch_assoc();
 
 if($filas>0){
-    
-   
-        
-        $_SESSION['userName'] = $user;
+
+        $_SESSION['password'] = $psw;
         header("location: ../dashboard.php");
     
        
-}else{ 
+}
+
+else{ 
 echo '<script> 
 alert("Usuario o contraseña incorrecto");
    

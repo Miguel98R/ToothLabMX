@@ -26,39 +26,58 @@
 
 
 
-<div class="container">
+    <nav class="navbar navbar-light blue-gradient">
+  <span class="navbar-brand"></span>
+</nav>             
 
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4 text-center justify-content-center align-content-center">
-                <div class="login text-center my-5 ">
-                    <div class="text-center py-4 px-5">
-                        <img class="rounded-circle img-fluid logo" src="./img/logo.jpg" alt="">
-                    </div>
-                    <div class="text-center ">
-                        <h2 class="font-weight-bolder text-white">Iniciar sesión</h2>
+
+    <section class="py-5 ">
+        <div class="container py-4">
+            <form action="util/validateLogin.php" method="POST" autocomplete="off" onsubmit="return validar();">
+
+                <div class="row">
+                    <div class="col-md-6 py-3">
+                        <img src="img/logo.jpg" class="rounded-circle  m-3" alt="" width="370" height="340">
                     </div>
 
-                    <form action="util/validateLogin.php" method="post" autocomplete="off" onsubmit="return validar();">
-                        <div class="text-center">
-                            <div class="py-2"><input class="inputDato" type="text" id="user" name="user"
-                                    placeholder="Ingresa tu usuario"></div>
-                            <div><input class="inputDato" type="password" id="psw" name="psw"
-                                    placeholder="Ingresa tu contraseña">
+                    <div class="col-md-6 text-center">
+
+                       <div class="login_position">
+                            <div class="card" style="height: 100%;">
+                                <h3 class="card-header font-weight-bold white-text  light-blue darken-4">Bienvenido</h3>
+                                <div class="card-body white-text blue-gradient">
+                                    <h5 class="card-title font-weight-bold">Ingresa tu contraseña</h5>
+                                    <div class="py-4">
+                                <input class="inputDato" type="password" name="psw" id="psw" >
+                                    </div>
+                                    
+                                                
+                                    <button  class="btn btn-primary" type="submit">Entrar</button>
+                                </div>
                             </div>
 
+                       </div>
+                     
+                      
+                                            
+                    
+                        
+                       
+                   
 
-                        </div>
-                        <div class="py-3">
-                            <button class="button2 " type="submit">Entrar</button>
-                        </div>
+                        
+                    </div>
 
-                    </form>
-                </div>
+                   
             </div>
-            <div class="col-md-4"></div>
+
+            </form>
+
+            
+
         </div>
-    </div>
+    </section>
+
 
     <?php include("components/footer.php"); ?>
 
@@ -92,7 +111,21 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-  <script src="js/sweetAlert.js"></script>
+  <script >
+  
+  function validar(){
+    let psw;  
+   
+    psw = document.getElementById("psw").value;
+
+     if(psw==="" || psw===false || psw===undefined ){
+       Swal.fire({icon: 'warning',title:"Por favor ingresa tu contraseña"});
+        return false;
+     }      
+}
+
+  </script>
+  
 
 </body>
 </html>

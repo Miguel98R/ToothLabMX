@@ -58,7 +58,7 @@ function changeColor(x)
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 col-sm-12 col-md-7 col-lg-7 py-2">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 py-2">
       
 <div  style="font-size: 14px; border: 7px solid black; border-radius:20px;">
    <form action="util/crearOrden.php" method="POST" autocomplete="off">
@@ -242,7 +242,7 @@ function changeColor(x)
 
    </div>
 
-    <div class="text-center col-12 col-sm-12 col-md-5 col-lg-5 py-2">
+    <div class="text-center col-12 col-sm-12 col-md-6 col-lg-6 py-2">
   
       
            

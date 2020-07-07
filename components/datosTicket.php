@@ -45,6 +45,28 @@
   </tbody>
 </table>
 <div class="py-2 text-center">
+  <div class="row">
+  <div class="col py-2 text-center font-weight-bold">
+    <a class="btn btn-primary btn-sm" title="Imprimir orden" target="_blank"  href="util/impresionTicket.php?buscador=<?php echo $folio;?>"><i class="fas fa-print"></i></a>
+</div>
+
+ <div class="col py-2 text-center font-weight-bold">
+  <button title="Agregar producto"  type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+ <i class="fas fa-plus-square"></i>
+</button>
+
+
+</div>
+<div class="col py-2 text-center font-weight-bold">
+  <button  title="Editar orden"  type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal1">
+ <i class="fas fa-edit"></i>
+</button>
+
+
+
+</div>
+  
+</div>
 
 <table class="table table-hover table-sm">
   <thead>
@@ -69,7 +91,7 @@
       <td><?php echo mb_strtoupper($datos['producto']);?></td>
       <td><?php echo mb_strtoupper($datos['color']);?></td>
        <td><?php echo $datos['od'];?></td>
-       <td><a title="Editar producto"  href="./components/editarDato.php?tabla=orden_productos_description&id=<?php echo $datos['id'];?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+       <td><a title="Editar producto"  href="./components/editarDato.php?tabla=orden_productos_description&id=<?php echo $datos['id'];?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a></td>
 
     </tr>
     <?php } ?>
@@ -82,14 +104,6 @@
     <p><label  style="color:<?php echo $ticketColor;?>;">Comentarios:</label>  &nbsp;<?php echo mb_strtoupper($comentario);?></p>
 </div>
 
-<div class="row">
-  <div class="col py-2 text-center font-weight-bold">
-    <a class="btn btn-primary" target="_blank"  href="util/impresionTicket.php?buscador=<?php echo $folio;?>">Imprimir</a>
-</div>
- <div class="col py-2 text-center font-weight-bold">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
- Agregar producto
-</button>
 
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -117,13 +131,8 @@
   </div>
 </div>
 
-</div>
-<div class="col py-2 text-center font-weight-bold">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
- Editar
-</button>
 
-<!-- Modal -->
+  <!-- Modal -->
 <div class="modal fade " id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog ">
     <div class="modal-content">
@@ -149,14 +158,6 @@
     </div>
   </div>
 </div>
-
-</div>
-  
-</div>
-
-
-
-  
 
 
 

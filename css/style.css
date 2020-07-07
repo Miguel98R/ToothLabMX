@@ -6,27 +6,25 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    background-image: url("../img/fondo.png");
     
-
-
-   
     
 }
 body::-webkit-scrollbar{
     width: 13px;
-   background-color:gainsboro;
-
+  
 
    
 }
 body::-webkit-scrollbar-thumb{
- background-color: #08AEEA;
-background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+ background-color: #3A7EC9;
+background-image: linear-gradient(0deg, #3A7EC9 0%, #3A7EC9 100%);
 
 
      border-radius: 20px;
     
+}
+.conFondo{
+    background-image: url("../img/fondo.png")
 }
 .logo {
     width: 150px;
@@ -125,3 +123,15 @@ height: 350px;
 
 }
 
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
+}

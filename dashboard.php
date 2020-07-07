@@ -14,68 +14,76 @@ if (!isset($psw)) {
 
 <?php include "components/head.php"?>
 
-<body  class="scrollbar scrollbar-primary">
+<body  class="scrollbar scrollbar-primary ">
+
+
+
     <header>
        <?php include("components/nav.php") ?>
     </header>
 
-<nav class="navbar  navbar-expand-sm">
- <ul class="nav nav-tabs">
-    <li class="nav-item active bg-transparent" >
-      <a class="nav-link active" id="tab-1" data-toggle="tab" role="tab" href="#NuevaOrden" aria-selected="true" aria-controls="NuevaOrden"><i class="far fa-clipboard"></i>&nbsp;Pedidos</a>
+
+
+    <div class="container-fluid ">
+    <!-- <h1></h1> -->
+  <hr>
+  <div class="row ">
+    <div class="col-md-2 mb-3 ">
+        <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link text-white my-2  conFondo active" id="tab-1" data-toggle="tab" role="tab" href="#NuevaOrden" aria-selected="true" aria-controls="NuevaOrden"><i class="far fa-clipboard"></i>&nbsp;Pedidos</a>
     </li>
-     <li class="nav-item">
-      <a class="nav-link" id="tab-2" data-toggle="tab" role="tab" href="#HistorialView" aria-selected="false" aria-controls="HistorialView"><i class="fas fa-history"></i>&nbsp;Historial Ordenes</a>
+  <li class="nav-item">
+    <a class="nav-link text-white my-2 conFondo" id="tab-2" data-toggle="tab" role="tab" href="#HistorialView" aria-selected="false" aria-controls="HistorialView"><i class="fas fa-history"></i>&nbsp;Historial Ordenes</a>
     </li>
+  <li class="nav-item">
+    <a class="nav-link text-white my-2 conFondo" id="tab-4" data-toggle="tab" role="tab" href="#DentistasView" aria-selected="false" aria-controls="DentistasView"><i class="fas fa-tooth"></i>&nbsp;Dentistas</a>
+   </li>
     <li class="nav-item">
-      <a class="nav-link" id="tab-4" data-toggle="tab" role="tab" href="#DentistasView" aria-selected="false" aria-controls="DentistasView"><i class="fas fa-tooth"></i>&nbsp;Dentistas</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="tab-5" data-toggle="tab" role="tab" href="#ProductosView" aria-selected="false" aria-controls="ProductosView"><i class="fas fa-list-ol"></i>&nbsp;Productos</a>
-    </li>
-    
-  
-  </ul>
-</nav>
-<main role="main" class="container-full">
-  <div class="container-full">
-    <div class="tab-content">
-      <div class="tab-pane fade show active" id="NuevaOrden" aria-labelledby="tab-1" role="tabpanel">
-        <?php include "components/newOrden.php"; ?>    
+     <a class="nav-link text-white my-2 conFondo" id="tab-5" data-toggle="tab" role="tab" href="#ProductosView" aria-selected="false" aria-controls="ProductosView"><i class="fas fa-list-ol"></i>&nbsp;Productos</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link white-text  my-2 conFondo" href="index.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar sesión</a> 
+   </li>
+</ul>
     </div>
-     <div class="tab-pane fade" id="HistorialView" aria-labelledby="tab-2" role="tabpanel">
-              <?php include "historialOrdenes.php"; ?>
-            </div>
-  
-      <div class="tab-pane fade" id="DentistasView" aria-labelledby="tab-4" role="tabpanel">
-              <?php include "dentistas.php"; ?>
-            </div>
-      <div class="tab-pane fade" id="ProductosView" aria-labelledby="tab-5" role="tabpanel">
-        <?php include "productos.php"; ?>
-        </div>
-       
-      
-    
-    </div>
+    <!-- /.col-md-4 -->
+        <div class="col-md-10">
+      <div class="tab-content" id="myTabContent">
+   <div class="tab-pane fade show active" id="NuevaOrden" aria-labelledby="tab-1" role="tabpanel">
+ 
+     <?php include "components/newOrden.php"; ?>    
   </div>
-</main>
+  <div class="tab-pane fade" id="HistorialView" aria-labelledby="tab-2" role="tabpanel">
+    
+    <?php include "historialOrdenes.php"; ?>
+  </div>
+   <div class="tab-pane fade" id="DentistasView" aria-labelledby="tab-4" role="tabpanel">
+  
+    <?php include "dentistas.php"; ?>
+  
+  </div>
+     <div class="tab-pane fade" id="ProductosView" aria-labelledby="tab-5" role="tabpanel">
+
+   <?php include "productos.php"; ?>
+  
+  </div>
+</div>
+    </div>
+    <!-- /.col-md-8 -->
+  </div>
+  
+  
+  
+</div>
+<!-- /.container -->
+
+
+
 
     
    
-  <!-- jQuery -->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script src="js/jquery-3.4.1.slim.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- datatables JS -->
-    <script type="text/javascript" src="datatables/datatables.min.js"></script>    
-    <script type="text/javascript" src="js/main.js"></script>
-  <!-- Your custom scripts (optional) -->
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<?php include "components/scripts.php"?>
 
   
 </body>

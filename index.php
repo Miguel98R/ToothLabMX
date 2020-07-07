@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include "components/head.php"?>
-<body class="conFondo">
+<body>
 
   <!-- Start your project here-->  
-  <?php include "components/loading.php"?>
 
 
 
 
-   <header>
-       <?php include("components/nav.php") ?>
-    </header>
-           
 
 
-    <section class="py-5 ">
-        <div class="container py-4">
+
+    <section class="py-5  ">
+        <div class="container py-4 " >
             <form action="util/validateLogin.php" method="POST" autocomplete="off" onsubmit="return validar();">
 
-                <div class="row">
-                    <div class="col-md-6 py-3">
-                        <img  src="img/logo.jpg" class="rounded-circle  m-3" alt="" width="380" height="350">
-                    </div>
+                <div class="row" style="height:80%;border-radius:20px;background-color: rgb(127, 204, 255);">
+                    <div class="col-md-6  conFondo"style="border-radius:20px;height:500px;">
+                        <div class=" login_position  text-center  py-2 ">
+                             <img  src="img/logo.jpg" class="rounded-circle "  alt="" width="230" height="220">
+                              <p class="text-white w-100  font-weight-bold"><br>   Licencia autorizada para: Laboratorio Dental Seven   </p>
+            
+                       
+                        </div>
+                       
+                                </div>
 
-                    <div class="col-md-6 text-center">
-
-                       <div class="login_position">
+                    <div class="col-md-6  text-center" >
+                        <div class="login_position  " >
                             <div class="card" style="height: 100%;">
                                 <h3 class="card-header font-weight-bold white-text  light-blue darken-4">Bienvenido</h3>
                                 <div class="card-body white-text blue-gradient">
@@ -60,14 +61,15 @@
             
 
         </div>
+        
     </section>
 
 
-    <?php include("components/footer.php"); ?>
+    
 
 
 
-
+ <?php include("components/footer.php"); ?>
 
 
 

@@ -1,6 +1,6 @@
 <?php 
 
-$consulta= "SELECT id,producto,precio FROM productos;";
+$consulta= "SELECT id,producto,precio,status FROM productos;";
 $result=mysqli_query($conn,$consulta);
 
 ?>
@@ -16,6 +16,7 @@ $result=mysqli_query($conn,$consulta);
                         <td>#</td>
                         <td >Nombre</td>
                         <td >Precio</td>
+                        <td >Status</td>
                         <td >Acciones</td>
                         </thead>
                       </tr>
@@ -25,6 +26,7 @@ $result=mysqli_query($conn,$consulta);
                       <td>#</td>
                         <td >Nombre</td>
                         <td >Precio</td>
+                         <td >Status</td>
                         <td >Acciones</td>
                         </thead>
                       </tr>
@@ -38,6 +40,21 @@ $result=mysqli_query($conn,$consulta);
                           <td><?php echo $datos['id'] ?></td>
                           <td style="width: 50%;" ><?php echo mb_strtoupper( $datos['producto']) ?></td>
                           <td><?php echo "$"." ". $datos['precio'] ?></td>
+                           <?php 
+                        $status = $datos['status'];
+                          
+                        if($status==1){
+                            $status="EN USO";
+                            $colorStatus ="green";
+                          }else if($status==0){
+                            $status="INACTIVO";
+                            $colorStatus ="blue";
+                          }
+
+                        
+                        ?>
+
+                             <td style="color:<?php echo $colorStatus?>;"><?php echo $status; ?></td>
                           <td>
                              <div class="row px-3">
                                 <div class="col"><a title="Eliminar producto"  href="./util/eliminarDato.php?tabla=productos&id=<?php echo $datos['id']?>" onclick="return confirmar();" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></div>&nbsp;

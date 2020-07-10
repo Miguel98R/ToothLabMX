@@ -4,30 +4,11 @@ $consulta = "SELECT DISTINCT T1.id ,T1.paciente,T3.nombre,T3.color as CD ,T1.fec
                     INNER JOIN dentistas T3 ON T1.id_dentista=T3.id 
                     INNER JOIN productos T4 ON T2.id_producto=T4.id ORDER BY T1.id  DESC;";
 
-
-
-
-
-
-
-
 $result=mysqli_query($conn,$consulta);
-
-
-
 
 ?>
 
-     <div class=" container text-center">
     
-    
-      <div><a class="btn btn-success text-white " href="util/exportarDatos.php">Respaldar &nbsp; <i class="fas fa-database"></i></a></div>
-       
-
-     </div>
-
-  
-             
      <div class="container-fluid justify-content-center py-4" >
 
     <div class="row">

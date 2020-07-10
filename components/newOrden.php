@@ -4,7 +4,7 @@
     $consulta= "SELECT id,nombre FROM dentistas WHERE status=1 ORDER BY nUsado DESC; ";
     $result=mysqli_query($conn,$consulta);
 
-    $consultaProducto= "SELECT producto FROM productos ORDER BY nUsado DESC; ";
+    $consultaProducto= "SELECT producto FROM productos WHERE status=1 ORDER BY nUsado DESC; ";
     $resultProducto=mysqli_query($conn,$consultaProducto);
 
     $consultaColores= "SELECT colorName FROM colores;";

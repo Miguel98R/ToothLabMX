@@ -83,6 +83,7 @@
   <tbody>
     <?php 
     while($datos=$resultProducto->fetch_assoc()){
+     $idproducto = $datos['id'];
 
    ?>
     <tr>
@@ -91,7 +92,7 @@
       <td><?php echo mb_strtoupper($datos['producto']);?></td>
       <td><?php echo mb_strtoupper($datos['color']);?></td>
        <td><?php echo $datos['od'];?></td>
-       <td><a title="Editar producto"  href="./components/editarDato.php?tabla=orden_productos_description&id=<?php echo $datos['id'];?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a></td>
+       <td><a title="Editar producto" data-toggle="modal" data-target="#exampleModalProducto"  href="./components/editarDato.php?tabla=orden_productos_description&id=<?php echo $idproducto?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a></td>
 
     </tr>
     <?php } ?>
@@ -105,21 +106,21 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Modal Aregar Productos -->
 <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nuevo producto</h5>
+      <div class="modal-header blue-gradient">
+        <h5 class="modal-title text-white " id="exampleModalLabel">Nuevo producto</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form action="util/agregarProducto.php?id=<?php echo $folio?>" method="POST" >
-           <?php include "components/formNuevaDescripcion.php";?> 
+           <?php include "components/nuevoProducto.php";?> 
 
-           <button type="submit" class="btn btn-primary">Agregar</button>
+           <button type="submit" class="btn btn-primary ">Agregar</button>
         </form>
           
       </div>
@@ -132,7 +133,7 @@
 </div>
 
 
-  <!-- Modal -->
+  <!-- Modal Edicion de datos cabecera (Esto tiene que cabiar a cada uno en solitario) -->
 <div class="modal fade " id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog ">
     <div class="modal-content">
@@ -158,6 +159,35 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal Editar Producto -->
+<?php 
+
+ $consultaProductos ="SELECT T1.id,T1.cantidad,T2.producto,T1.color,T1.od FROM orden_productos_description T1 INNER JOIN productos T2 ON T1.id_producto = T2.id WHERE T1.id=$idproducto ;";
+              $result2 = $conn->query($consultaProductos) or die($conn->error);
+              $datosa=$result2->fetch_assoc();
+
+?>
+<div class="modal fade bd-example-modal-lg" id="exampleModalProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header blue-gradient">
+        <h5 class="modal-title text-white" id="exampleModalLabel">Editar Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+       <?php include "components/editarProducto.php";?> 
+        
+      </div>
+    
+    </div>
+  </div>
+</div>
+
 
 
 

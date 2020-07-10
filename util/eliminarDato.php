@@ -7,12 +7,27 @@
     
     if($tabla == "productos"){
 
-        $consulta = "DELETE FROM productos WHERE id='$id';";
+        $status = "SELECT status FROM productos WHERE id='$id';";
+    $resultado = $conn->query($status) or die (mysqli_error($conn));
+    $dato = $resultado->fetch_assoc();
+    $stado = $dato['status'];
 
-        $result = $conn->query($consulta) or die (mysqli_error($conn));
+        if($stado == 1){
+        $consulta = "UPDATE productos
+        SET status = 0
+        WHERE id='$id';";
 
+        $resultDoc = $conn->query($consulta) or die (mysqli_error($conn));
 
+    }
+    elseif($stado == 0){
+        $consulta = "UPDATE productos
+        SET status = 1
+        WHERE id='$id';";
 
+        $resultDoc = $conn->query($consulta) or die (mysqli_error($conn));
+
+    }
 
     }elseif($tabla == "dentistas"){
 
@@ -53,16 +68,6 @@
             </script>';
         }
 
-   if($result==true){
-            echo'<script type="text/javascript">
-            alert("Registro eliminado");
-            window.location.href="../dashboard.php";
-            </script>';
-            }else{
-                echo'<script type="text/javascript">
-                alert("Error al eliminar registro");
-                window.location.href="../dashboard.php";
-                </script>';
-            }
+  
 
 ?>

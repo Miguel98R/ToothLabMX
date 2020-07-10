@@ -48,28 +48,6 @@ if($_GET['tabla'] == "productos"){
 
 
 
-}elseif($_GET['tabla'] == "cuentas"){
-
-    $abono = $_POST["abono"];
-$id = $_GET["id"];
-
-echo $abono;
-echo $id;
-
- $abonos = "SELECT abono FROM cuentas WHERE id_dentista='$id';";
-    $result = $conn->query($abonos) or die (mysqli_error($conn));
-    $datos=$result->fetch_assoc();
-    $abonoAnterior = $datos['abono'] ;
-
-    $abonoTotal = $abonoAnterior + $abono;
-
-  $consulta = "UPDATE cuentas SET abono='$abonoTotal' WHERE id_dentista='$id'; ";
-        
- 
-
-     
-           
-
 }
 
 
@@ -78,12 +56,12 @@ echo $id;
       if($result==true){
             echo'<script type="text/javascript">
             alert("Actualizado con exito ");
-            window.location.href="../dashboard.php";
+            window.location.href="./dashboard.php";
             </script>';
             }else{
                 echo'<script type="text/javascript">
                 alert("Error al actualizar");
-                window.location.href="../dashboard.php";
+                window.location.href="./dashboard.php";
                 </script>';
             }
     

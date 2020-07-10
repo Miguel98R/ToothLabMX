@@ -18,17 +18,19 @@ if (!isset($psw)) {
 
 
 
-    <header>
+    <header class="py-1" >
        <?php include("components/nav.php") ?>
     </header>
 
 
 
-    <div class="container-fluid ">
-    <!-- <h1></h1> -->
-  <hr>
+    <div class="container-fluid grey  ">
+     
+
   <div class="row ">
-    <div class="col-md-2 mb-3 ">
+  
+    <div class="col-md-2 ">
+     <h3 class="text-white py-2"><i class="fas fa-bars"></i>&nbsp;MENU</h3>
         <ul class="nav nav-pills flex-column" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link text-white my-2  conFondo active" id="tab-1" data-toggle="tab" role="tab" href="#NuevaOrden" aria-selected="true" aria-controls="NuevaOrden"><i class="far fa-clipboard"></i>&nbsp;Pedidos</a>
@@ -45,10 +47,13 @@ if (!isset($psw)) {
    <li class="nav-item">
     <a class="nav-link white-text  my-2 conFondo" href="index.php"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar sesión</a> 
    </li>
-</ul>
+   <li class="nav-item">
+   <a class="btn btn-success text-white " href="util/exportarDatos.php">Respaldar BD &nbsp; <i class="fas fa-database"></i></a>
+  </li>
+  </ul>
     </div>
     <!-- /.col-md-4 -->
-        <div class="col-md-10">
+        <div class="col-md-10 white">
       <div class="tab-content" id="myTabContent">
    <div class="tab-pane fade show active" id="NuevaOrden" aria-labelledby="tab-1" role="tabpanel">
  

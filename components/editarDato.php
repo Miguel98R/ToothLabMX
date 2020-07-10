@@ -1,6 +1,4 @@
-
-
-    <?php
+<?php
     include("../util/conexion.php");
     
     if(isset($_GET['id'])){ 
@@ -15,19 +13,13 @@
             $result = $conn->query($consulta) or die($conn->error);
         }
 
-     
-
-      
+          
       $datos=$result->fetch_assoc();
     }
   
-     
-           
-
 ?>
  
 <div class="container-fluid">
-
 
 <div>
     <h3 class="text-center">Actualización de datos</h3>

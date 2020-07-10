@@ -69,7 +69,7 @@ function changeColor(x)
     </div>
  
     <tr>
-    <th ><p>  <label style="color:black;">Dr:</label>  <input list="dentista"  name="dentista" class="inputDato" placeholder="Selecciona un dentista:" required>
+    <th ><p>  <label class="font-weight-bolder">Dr:</label>  <input list="dentista"  name="dentista" class="inputDato" placeholder="Selecciona un dentista:" required>
                         <datalist class="inputDato" id="dentista">
                         <?php
                             while($datos=$result->fetch_assoc()){
@@ -77,13 +77,13 @@ function changeColor(x)
                             <option  value="<?php echo strtoupper($datos['id']);?>"><?php echo strtoupper($datos['nombre']);?> </option>
                             <?php }?>
                             </datalist></p></th>
-      <th ><p>  <label style="color:black;">Entrada:</label>  <input type="date" name="entrada" id="entrada" class="inputDato" ></p></th>
+      <th ><p>  <label class="font-weight-bolder">Entrada:</label>  <input type="date" name="entrada" id="entrada" class="inputDato" ></p></th>
       
     </tr>
     <tr>
-    <th ><p>  <label style="color:black;">Paciente:</label>  <input type="text" name="paciente" class="inputDato" placeholder="Nombre del paciente:" ></p></th>
+    <th ><p>  <label class="font-weight-bolder">Paciente:</label>  <input type="text" name="paciente" class="inputDato" placeholder="Nombre del paciente:" ></p></th>
  
-      <th ><p>  <label style="color:black;">Salida:</label> <input type="date" name="salida" id="salida" class="inputDato" ></p></th>
+      <th ><p>  <label class="font-weight-bolder">Salida:</label> <input type="date" name="salida" id="salida" class="inputDato" ></p></th>
        
       
     </tr>
@@ -97,9 +97,9 @@ function changeColor(x)
   <thead>
     <tr>
      
-      <th scope="col">PZS</th>
-      <th scope="col">PRODUCTOS</th>
-      <th scope="col">COLOR</th>
+      <th class="font-weight-bold" scope="col">PZS</th>
+      <th class="font-weight-bold" scope="col">PRODUCTO</th>
+      <th class="font-weight-bold" scope="col">COLOR</th>
     
     
     </tr>

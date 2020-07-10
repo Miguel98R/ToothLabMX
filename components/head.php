@@ -18,11 +18,11 @@
   <link rel="stylesheet" href="css/style.css">
     <!--datables CSS básico-->
    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-    <!--datables estilo bootstrap 4 CSS-->  
-    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css"/>
-   
+    
 
     <script src="js/fechaactual.js"></script>
+     <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
 
 <title>Seven</title>
 

@@ -54,14 +54,16 @@ if($_GET['tabla'] == "productos"){
  $result = $conn->query($consulta) or die($conn->error);
  
       if($result==true){
+
+            
             echo'<script type="text/javascript">
             alert("Actualizado con exito ");
-            window.location.href="./dashboard.php";
+            window.location.href="../dashboard.php";
             </script>';
             }else{
                 echo'<script type="text/javascript">
                 alert("Error al actualizar");
-                window.location.href="./dashboard.php";
+                window.location.href="../dashboard.php";
                 </script>';
             }
     

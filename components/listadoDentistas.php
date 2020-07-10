@@ -95,4 +95,4 @@ $result=mysqli_query($conn,$consulta);
 		return true;
 	else
 		return false;
-}zz</script>
+}</script>

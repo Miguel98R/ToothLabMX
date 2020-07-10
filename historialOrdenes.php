@@ -96,7 +96,7 @@ $result=mysqli_query($conn,$consulta);
                 
                           <td>
                                 <div class="p-1">
-                                <a title="Imprimir"  href="./util/impresionTicket.php?buscador=<?php echo $datos['id'];?>" class="btn btn-info" target="_blank">
+                                <a title="Imprimir"  href="./util/impresionTicket.php?buscador=<?php echo $datos['id'];?>" class="btn btn-info btn-sm" target="_blank">
                                 <i class="fas fa-print"></i>
                                 </a>
                                 </div>

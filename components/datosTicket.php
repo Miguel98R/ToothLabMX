@@ -18,9 +18,9 @@
   <h5 class="text-center py-2 font-weight-bolder text-white"><i class="far fa-clipboard"></i> &nbsp;Orden</h5>
     </div>
     <tr>
-      <th ><p><label style="color:<?php echo $ticketColor;?>;">Entrada:</label> &nbsp;<?php echo date_format($fecha1,"d/m/Y");?></p></th>
+      <th><p><label class="font-weight-bold">Entrada:</label> &nbsp;<?php echo date_format($fecha1,"d/m/Y");?></p></th>
       <form action="dashboard.php" method="post"  >
-                   <th ><p><label style="color:<?php echo $ticketColor;?>;">Folio:</label>
+                   <th ><p><label class="font-weight-bold">Folio:</label>
                         <input type="number" class="inputDato text-center" name="buscador" id="buscador"
                          value="<?php echo $folio;?>" min="0"  placeholder="Ingresa un folio ">
                     
@@ -30,16 +30,16 @@
                 </form>
     </tr>
     <tr>
-      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Salida:</label> &nbsp;<?php echo date_format($fecha2,"d/m/Y");?></p></th>
-      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Dr:</label>  &nbsp;<?php echo mb_strtoupper($dentista);?></p></th>
+      <th scope="col"><p><label class="font-weight-bold">Salida:</label> &nbsp;<?php echo date_format($fecha2,"d/m/Y");?></p></th>
+      <th scope="col"><p><label class="font-weight-bold">Dr:</label>  &nbsp;<?php echo mb_strtoupper($dentista);?></p></th>
     </tr>
      <tr>
-      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Status:</label> &nbsp;<?php echo $status;?></p></th>
-      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Paciente:</label>  &nbsp;<?php echo  mb_strtoupper($paciente);?></p></th>
+      <th scope="col"><p><label class="font-weight-bold">Status:</label> &nbsp;<?php echo $status;?></p></th>
+      <th scope="col"><p><label class="font-weight-bold">Paciente:</label>  &nbsp;<?php echo  mb_strtoupper($paciente);?></p></th>
     </tr>
        <tr>
-      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Regreso:</label></p></th>
-      <th scope="col"><p><label style="color:<?php echo $ticketColor;?>;">Entrega:</label></p></th>
+      <th scope="col"><p><label class="font-weight-bold">Regreso:</label></p></th>
+      <th scope="col"><p><label class="font-weight-bold">Entrega:</label></p></th>
     </tr>
    
   </tbody>
@@ -70,13 +70,13 @@
 
 <table class="table table-hover table-sm">
   <thead>
-    <tr>
+    <tr >
      
-      <th scope="col">PZS</th>
-      <th scope="col">PRODUCTOS</th>
-      <th scope="col">COLOR</th>
-      <th scope="col">OD</th>
-      <th scope="col">ACCIÓN</th>
+      <th class="font-weight-bold" scope="col">PZS</th>
+      <th class="font-weight-bold" scope="col">PRODUCTOS</th>
+      <th class="font-weight-bold" scope="col">COLOR</th>
+      <th class="font-weight-bold" scope="col">OD</th>
+      <th class="font-weight-bold"  scope="col">ACCIÓN</th>
     
     </tr>
   </thead>
@@ -102,7 +102,7 @@
 </div>
   <hr>
 <div class=" text-center py-2 font-weight-bold">
-    <p><label  style="color:<?php echo $ticketColor;?>;">Comentarios:</label>  &nbsp;<?php echo mb_strtoupper($comentario);?></p>
+    <p><label class="font-weight-bold">COMENTARIOS:</label>  &nbsp;<?php echo mb_strtoupper($comentario);?></p>
 </div>
 
 

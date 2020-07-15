@@ -1,5 +1,7 @@
 <?php 
-     include("conexion.php");
+
+    session_start();
+     include "conexion.php" ;
 
     $tabla= $_GET['tabla'];
     $id = $_GET['id'];
@@ -57,16 +59,26 @@
 
     }
     if($resultDoc==true){
-        echo'<script type="text/javascript">
-        alert("Status actualizado ");
-        window.location.href="../dashboard.php";
-        </script>';
-        }else{
-            echo'<script type="text/javascript">
-            alert("Error al eliminar registro");
-            window.location.href="../dashboard.php";
-            </script>';
-        }
+
+
+  $_SESSION["mensaje"] = "Status actualizado";
+
+
+$_SESSION["colorMensaje"] = "success";
+
+header("location: ../dashboard.php");
+
+
+
+}else{
+   $_SESSION["mensaje"] = "No se pudo modificar el Status";
+
+
+$_SESSION["colorMensaje"] = "danger";
+
+header("location: ../dashboard.php");
+
+}
 
   
 

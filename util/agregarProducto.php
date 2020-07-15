@@ -2,6 +2,8 @@
 
 
    include "conexion.php";
+session_start();
+
    $idOrden = $_GET['id'];
 
    $cantidad = $_POST['cantidadNuevo'];
@@ -16,14 +18,6 @@
                  $precio = $datoidProducto['precio'];
 
     //CREAMOS LA NUEVA CUENTA DE LA ORDEN
-
-$totalOrden = $cantidad * $precio;
-
-
-
-$insertarCuenta = "INSERT INTO cuentas (totalOrden,abonadOrden,restanteOrden,cant,id_producto,id_orden) VALUES ('$totalOrden',0,'$totalOrden','$cantidad','$idProducto','$idOrden');";
-$resultCuenta = $conn->query($insertarCuenta) or die (mysqli_error($conn));
-
 
 if($_POST['od'] != "")
 {
@@ -68,17 +62,29 @@ $resultProducto = $conn->query($insertarProducto) or die (mysqli_error($conn));
 
 
 if($resultProducto==true){
-    echo'<script type="text/javascript">
-    alert("Producto agregado correctamente");
-        window.location.href="../dashboard.php";
-        
-        </script>';
+
+
+
+$_SESSION["mensaje"] = "Producto agregado correctamente";
+
+
+$_SESSION["colorMensaje"] = "success";
+
+header("location: ../dashboard.php");
+
+
+
 }else{
-    echo'<script type="text/javascript">
-       alert("No se pudo agregar el producto ");
-window.location.href="../dashboard.php";
-        </script>';
+   $_SESSION["mensaje"] = "No se pudo agregar el producto ";
+
+
+$_SESSION["colorMensaje"] = "danger";
+
+header("location: ../dashboard.php");
+
 }
+    
+
 
 
 

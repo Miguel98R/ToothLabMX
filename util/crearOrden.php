@@ -1,5 +1,6 @@
 <?php
 include "conexion.php";
+session_start();
 
 //obtenemos los datos del formulario
 
@@ -12,7 +13,7 @@ $cantidad = $_POST['cantidad'];
 $color = $_POST['color'];
 $producto =$_POST['producto'];
 $o_d="";
-$totalOrden=0;
+
 
  
 
@@ -36,7 +37,7 @@ $idOrden = $datoid['id'];
                 $idProducto = $datoidProducto['id'];
                 $precio = $datoidProducto['precio'];
 
-//CREAMOS LA NUEVA CUENTA DE LA ORDEN
+
 
 
 //consultamos el dentista que corresponde al a orden para despues utilizarle el uso que tiene
@@ -108,16 +109,25 @@ $resultProducto = $conn->query($insertarProducto) or die (mysqli_error($conn));
 
 
 if($resultCabeza==true){
-    echo'<script type="text/javascript">
-    alert("Orden registrada con exito Folio: '."'$idOrden'".'");
-        window.location.href="../dashboard.php";
-        
-        </script>';
+
+
+$_SESSION["mensaje"] = "Orden registrada con exito <br> Folio: ".$idOrden;
+
+
+$_SESSION["colorMensaje"] = "success";
+
+header("location: ../dashboard.php");
+
+
+
 }else{
-    echo'<script type="text/javascript">
-        alert("Error al registrar orden");
-window.location.href="../dashboard.php";
-        </script>';
+   $_SESSION["mensaje"] = "La orden no se pudo registrar correctamente";
+
+
+$_SESSION["colorMensaje"] = "danger";
+
+header("location: ../dashboard.php");
+
 }
 
 

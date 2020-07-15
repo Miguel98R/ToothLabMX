@@ -2,6 +2,9 @@
 <?php 
 
    include "conexion.php";
+
+session_start();
+
    $id = $_GET['id'];
     $tabla = $_GET['tabla'];
 
@@ -51,21 +54,36 @@ if($_GET['tabla'] == "productos"){
 }
 
 
+
+
+
  $result = $conn->query($consulta) or die($conn->error);
  
-      if($result==true){
+      
 
-            
-            echo'<script type="text/javascript">
-            alert("Actualizado con exito ");
-            window.location.href="../dashboard.php";
-            </script>';
-            }else{
-                echo'<script type="text/javascript">
-                alert("Error al actualizar");
-                window.location.href="../dashboard.php";
-                </script>';
-            }
+
+
+           if($result==true){
+
+
+$_SESSION["mensaje"] = "Actualizado con éxito ";
+
+
+$_SESSION["colorMensaje"] = "success";
+
+header("location: ../dashboard.php");
+
+
+
+}else{
+   $_SESSION["mensaje"] = "Error al actualizar";
+
+
+$_SESSION["colorMensaje"] = "danger";
+
+header("location: ../dashboard.php");
+
+}
     
 
 

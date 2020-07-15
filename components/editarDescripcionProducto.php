@@ -1,4 +1,4 @@
- <form action="./util/actualizarDatos.php?tabla=orden_productos_description&id=<?php echo $datosa['id'];?>" method="post" autocomplete="off">
+ <form action="./util/actualizarDatos.php?tabla=orden_productos_description&id=<?php echo $idproducto;?>" method="post" autocomplete="off">
                             
                             <div class="container py-3 ">
                                 <div class="text-center">
@@ -9,7 +9,7 @@
                                     <div class="col-md-6">
                                         <p>
                                          <label>Cantidad:</label>
-                                         <input type="text" class="w-100 inputDato py-1" name="cantidadNew"   value="<?php echo $datosa['cantidad'];?>"  placeholder="<?php echo $datosa['cantidad'];?>">
+                                         <input type="text" class="w-100 inputDato py-1" name="cantidadNew"   value="<?php echo $datos['cantidad'];?>"  placeholder="<?php echo $datos['cantidad'];?>">
                                     
                                         </p>
                                       
@@ -18,7 +18,7 @@
                                     <div class="col-md-6">
                                         <p>
                                         <label>Producto:</label>
-                                        <input list="productos" class="w-100 inputDato py-1" name="productoNew" value="<?php echo $datosa['producto'];?>" placeholder="<?php echo $datosa['producto'];?>">
+                                        <input list="productos" class="w-100 inputDato py-1" name="productoNew" value="<?php echo $datos['producto'];?>" placeholder="<?php echo $datos['producto'];?>">
                                     
                                         </p>
                                          
@@ -29,7 +29,7 @@
                                     <div class="col-md-6">
                                         <p>
                                              <label>Color:</label>
-                                            <input list="colores" style="font-size: 14px;"   name="colorNew" class="inputDato w-100" value="<?php echo $datosa['color'];?>"  placeholder="<?php echo $datosa['color'];?>" >
+                                            <input list="colores" style="font-size: 14px;"   name="colorNew" class="inputDato w-100" value="<?php echo $datos['color'];?>"  placeholder="<?php echo $datos['color'];?>" >
                                    
                                         </p>
                                       
@@ -38,7 +38,7 @@
                                     <div class="col-md-6">
                                         <p>
                                                <label>OD:</label>
-                                            <input type="text" class="w-100 inputDato py-1" name="odNew" value="<?php echo $datosa['od'];?>" placeholder="<?php echo $datosa['od']?>" >
+                                            <input type="text" class="w-100 inputDato py-1" name="odNew" value="<?php echo $datos['od'];?>" placeholder="<?php echo $datos['od']?>" >
                                 
 
                                         </p>

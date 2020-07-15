@@ -17,7 +17,7 @@
   
   function validar(){
     let psw;  
-   
+   //validacion al no ingresar caracter en el input de contraseña
     psw = document.getElementById("psw").value;
 
      if(psw==="" || psw===false || psw===undefined ){
@@ -26,5 +26,14 @@
      }      
 }
 
+//Cierra la modal en 2 segundos
+window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 2000);
+
   </script>
+
+
   

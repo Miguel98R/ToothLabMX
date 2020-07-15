@@ -89,7 +89,7 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
     $pdf->SetLineWidth(0.5);
 
     $pdf->SetFont('Arial','B',14);
-    $pdf->SetTextColor($r,$g,$b);
+    $pdf->SetTextColor(0,0,0);
     
     $pdf->Cell(25,6,'Entrada:',1,0,'L');
     $pdf->SetTextColor(0,0,0);
@@ -97,7 +97,7 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
     $pdf->Cell(30,6,date_format($fecha1,"d/m/Y"),1,0,'L');
 
     $pdf->SetFont('Arial','B',14);
-    $pdf->SetTextColor($r,$g,$b);
+     $pdf->SetTextColor(0,0,0);
     $pdf->Cell(15,6,'Folio:',1,0,'L');
     $pdf->SetTextColor(0,0,0);
   $pdf->SetFont('Arial','B',14);
@@ -106,14 +106,14 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
     $pdf->Ln(4);
 
     $pdf->SetFont('Arial','B',14);
-    $pdf->SetTextColor($r,$g,$b);
+  $pdf->SetTextColor(0,0,0);
    $pdf->Cell(25,6,'Salida:',1,0,'L');
     $pdf->SetTextColor(0,0,0);
    $pdf->SetFont('Arial','B',14);
     $pdf->Cell(30,6,date_format($fecha2,"d/m/Y"),1,0,'L');
 
     $pdf->SetFont('Arial','B',14);
-    $pdf->SetTextColor($r,$g,$b);
+    $pdf->SetTextColor(0,0,0);
     $pdf->Cell(15,6,'Dr. :',1,0,'L');
     $pdf->SetTextColor(0,0,0);
    $pdf->SetFont('Arial','B',14);
@@ -122,14 +122,14 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
     $pdf->Ln(4);
 
     $pdf->SetFont('Arial','B',13);
-    $pdf->SetTextColor($r,$g,$b);
+     $pdf->SetTextColor(0,0,0);
     $pdf->Cell(25,6,'Status:',1,0,'L');
     $pdf->SetTextColor(0,0,0);
    $pdf->SetFont('Arial','B',13);
     $pdf->Cell(30,6,mb_strtoupper($status),1,0,'L');
 
     $pdf->SetFont('Arial','B',14);
-    $pdf->SetTextColor($r,$g,$b);
+    $pdf->SetTextColor(0,0,0);
      $pdf->Cell(15,6,'Px:',1,0,'L');
     $pdf->SetTextColor(0,0,0);
    $pdf->SetFont('Arial','B',14);
@@ -138,14 +138,14 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
       $pdf->Ln(4);
 
     $pdf->SetFont('Arial','B',14);
-    $pdf->SetTextColor($r,$g,$b);
+    $pdf->SetTextColor(0,0,0);
     $pdf->Cell(25,6,'Regreso:',1,0,'L');
     $pdf->SetTextColor(0,0,0);
    $pdf->SetFont('Arial','B',14);
     $pdf->Cell(30,6," ",1,0,'L');
 
     $pdf->SetFont('Arial','B',14);
-    $pdf->SetTextColor($r,$g,$b);
+    $pdf->SetTextColor(0,0,0);
      $pdf->Cell(25,6,'Entrega:',1,0,'L');
     $pdf->SetTextColor(0,0,0);
    $pdf->SetFont('Arial','B',14);
@@ -177,7 +177,7 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
      $pdf->Ln(6);
      $pdf->Cell(25,6," ",0,0,'C');
      $pdf->SetFont('Arial','B',14);
-     $pdf->SetTextColor($r,$g,$b);
+     $pdf->SetTextColor(0,0,0);
      $pdf->Cell(70,6,$datos['od'],0,0,'C');
     
     $pdf->Cell(15,6," ",0,1,'C');
@@ -191,7 +191,7 @@ list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
     
     
    $pdf->SetFont('Arial','B',14);
-    $pdf->SetTextColor($r,$g,$b);
+   $pdf->SetTextColor(0,0,0);
     $pdf->Cell(130,6,'COMENTARIOS:',0,1,'C');
     $pdf->SetTextColor(0,0,0);
     $pdf->SetFont('Arial','B',12);

@@ -74,7 +74,33 @@ $result=mysqli_query($conn,$consulta);
                                   <a title="Cambiar status" href="./util/eliminarDato.php?tabla=dentistas&id=<?php echo $datos['id']?>" onclick="return confirmarDc();" class="btn btn-info btn-sm"><i class="fas fa-clipboard-check"></i></a>
                                 </div>&nbsp;
                                   <div class="col">
-                               <a title="Editar Registro" href="./components/editarDato.php?tabla=dentistas&id=<?php echo $datos['id'];?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                               <a title="Editar Registro" data-toggle="modal" data-target="#exampleModalDentista<?php echo $datos['id']; ?>"  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                             
+                             
+                                  <!-- Modal Editar Dentista -->
+                                  <div class="modal fade bd-example-modal-lg" id="exampleModalDentista<?php echo $datos['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                      <div class="modal-content">
+                                        <div class="modal-header blue-gradient">
+                                          <h5 class="modal-title text-white" id="exampleModalLabel">Editar Dentista</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                        <?php include "components/editarDentista.php";?> 
+                                          
+                                        </div>
+                                      
+                                      </div>
+                                    </div>
+                                  </div>
+                             
+
+
+
+                             
                               </div>
                                </div>
                           </td>

@@ -57,8 +57,33 @@ $result=mysqli_query($conn,$consulta);
                              <td style="color:<?php echo $colorStatus?>;"><?php echo $status; ?></td>
                           <td>
                              <div class="row px-3">
-                                <div class="col"><a title="Eliminar producto"  href="./util/eliminarDato.php?tabla=productos&id=<?php echo $datos['id']?>" onclick="return confirmar();" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></div>&nbsp;
-                                <div class="col"><a title="Editar producto"  href="./components/editarDato.php?tabla=productos&id=<?php echo $datos['id'];?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a></div>
+                                <div class="col"><a title="Eliminar producto"  href="./util/eliminarDato.php?tabla=productos&id=<?php echo $datos['id']?>" onclick="return confirmar();" class="btn btn-info btn-sm"><i class="fas fa-info"></i></a></div>&nbsp;
+                                <div class="col"><a title="Editar producto" data-toggle="modal" data-target="#exampleModalitem<?php echo $datos['id']; ?>" href="./components/editarDato.php?tabla=productos&id=<?php echo $datos['id'];?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                              
+                               <!-- Modal Editar Dentista -->
+                                  <div class="modal fade bd-example-modal-lg" id="exampleModalitem<?php echo $datos['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                      <div class="modal-content">
+                                        <div class="modal-header blue-gradient">
+                                          <h5 class="modal-title text-white" id="exampleModalLabel">Editar Producto</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                        <?php include "components/editarItem.php";?> 
+                                      
+                                        </div>
+                                      
+                                      </div>
+                                    </div>
+                                  </div>
+                              
+                              </div>
+                             
+                             
+                             
                               </div>
                           </td>
                           </tr>

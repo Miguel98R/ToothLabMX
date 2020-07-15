@@ -19,18 +19,20 @@ if($filas>0){
 
         $_SESSION['password'] = $psw;
         header("location: ../dashboard.php");
-    
        
 }
 
 else{ 
-echo '<script> 
-alert("Usuario o contraseña incorrecto");
-   
-   window.location.href="../index.php";
- </script>';
+        
 
-        return false;
+$_SESSION["mensaje"] = "Contraseña incorrecta";
+
+
+$_SESSION["colorMensaje"] = "danger";
+
+header("location: ../index.php");
+
+
     
    
 }

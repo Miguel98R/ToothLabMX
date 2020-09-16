@@ -11,7 +11,7 @@
         <div class="container py-4 " >
             <form action="util/validateLogin.php" method="POST" autocomplete="off" onsubmit="return validar();">
 
-                <div class="row" style="height:80%;border-radius:20px;background-color: rgb(127, 204, 255);">
+                <div class="row" style="height:80%;border-radius:20px;background-color:#bdbdbd;">
                     <div class="col-md-6  conFondo"style="border-radius:20px;height:500px;">
                         <div class=" login_position  text-center  py-2 ">
                              <img  src="img/logo.jpg" class="rounded-circle "  alt="" width="230" height="220">

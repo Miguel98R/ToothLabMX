@@ -14,9 +14,9 @@
 <div  style="font-size: 14px; border: 7px solid  <?php echo $ticketColor;?>; border-radius:20px;">
 <table class="table text-left table-bordered table-hover table-sm ">
   <tbody>
-  <div style="background:<?php echo $ticketColor;?>;">
+  <!-- <div style="background:<?php echo $ticketColor;?>;">
   <h5 class="text-center py-2 font-weight-bolder text-white"><i class="far fa-clipboard"></i> &nbsp;Orden</h5>
-    </div>
+    </div> -->
     <tr>
       <th><p><label class="font-weight-bold">Entrada:</label> &nbsp;<?php echo date_format($fecha1,"d/m/Y");?></p></th>
       <form action="dashboard.php" method="post"  >
@@ -46,19 +46,19 @@
 </table>
 <div class="py-2 text-center">
   <div class="row">
-  <div class="col py-2 text-center font-weight-bold">
-    <a class="btn btn-primary btn-sm" title="Imprimir orden" target="_blank"  href="util/impresionTicket.php?buscador=<?php echo $folio;?>"><i class="fas fa-print"></i></a>
+  <div class="col-md-4 py-2 text-center font-weight-bold">
+    <a style="width:100px;"class="btn btn-primary " title="Imprimir orden" target="_blank"  href="util/impresionTicket.php?buscador=<?php echo $folio;?>"><i class="fas fa-print"></i></a>
 </div>
 
- <div class="col py-2 text-center font-weight-bold">
-  <button title="Agregar producto"  type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+ <div class="col-md-4 py-2 text-center font-weight-bold">
+  <button style="width:100px;" title="Agregar producto"  type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal">
  <i class="fas fa-plus-square"></i>
 </button>
 
 
 </div>
-<div class="col py-2 text-center font-weight-bold">
-  <button  title="Editar orden"  type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal1">
+<div class="col-md-4 py-2 px-2 text-center font-weight-bold">
+  <button style="width:100px;"  title="Editar orden"  type="button" class="btn  btn-primary  " data-toggle="modal" data-target="#exampleModal1">
  <i class="fas fa-edit"></i>
 </button>
 

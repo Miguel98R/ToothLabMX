@@ -15,12 +15,17 @@ $producto =$_POST['producto'];
 $o_d="";
 
 
- 
+$consultaId = "SELECT id FROM dentistas WHERE nombre='$dentista';";
+$resulId = $conn->query($consultaId) or die (mysqli_error($conn));
+$datoid=$resulId->fetch_assoc();
+$idDentista = $datoid['id'];
+
+
 
 
 //insertamos los datos que corresponden en la cabecera
 $insertarCabeza = "INSERT INTO orden_cabeza (paciente,id_dentista,fechaEntrante,fechaSaliente,comentario) 
-                    VALUES ('$paciente','$dentista','$entrada','$salida','$comentario') ;";
+                    VALUES ('$paciente','$idDentista','$entrada','$salida','$comentario') ;";
 $resultCabeza = $conn->query($insertarCabeza) or die(mysqli_error($conn));
 
 //consultamos el id de la orden

@@ -12,7 +12,10 @@
     $pasienteNuevo= $_POST['pacientEeditar'];
     $nuevaFecha = $_POST['fechaSalidaNuevo'];
 
-  
+    $consultaId = "SELECT id FROM dentistas WHERE nombre='$dentistaNuevo';";
+    $resulId = $conn->query($consultaId) or die (mysqli_error($conn));
+    $datoid=$resulId->fetch_assoc();
+    $idDentista = $datoid['id'];
 
     
    
@@ -25,6 +28,8 @@
      if($dentistaNuevo == null || $dentistaNuevo == " "){
          
         $dentistaNuevo = $datos['id_dentista'] ;
+     }else{
+         $dentistaNuevo = $idDentista ;
      }
 
       if($nuevaFecha == null || $nuevaFecha == " "){
